@@ -65,3 +65,37 @@ input[type=number]{width:96px}select{max-width:100%}option{background:var(--bg);
 .ach.got{opacity:1;border-color:var(--ok)}
 .ach>b{font-size:22px;color:var(--mut)}.ach.got>b{color:var(--ok)}
 .ach strong{font-size:15px}.ach small{white-space:normal;margin-top:2px}
+
+/* menu: brand, primary action, grouped secondary screens, compact toggles */
+.brand{margin-bottom:10px}
+.brand h1{margin:0}
+.chip{display:inline-block;margin-top:2px;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--mut)}
+.start{display:block;width:100%;margin-top:14px;padding:12px;font-size:20px;border-radius:14px}
+.start small{color:#fff;opacity:.85;margin-top:2px}
+.nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin:8px 0 4px}
+.nav button{padding:7px 6px;font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.nav b{color:var(--mut);font-size:11px;font-weight:700}
+.toggles{display:flex;flex-direction:column;gap:6px;margin-top:12px}
+.tg{display:flex;justify-content:space-between;align-items:center;gap:8px;width:100%;padding:7px 10px;font-size:13px;border-color:#8884;text-align:left}
+.tg b{font-size:11px;letter-spacing:.5px;text-transform:uppercase;color:var(--mut)}
+.tg.on{border-color:var(--ring)}
+.tg.on b{color:var(--ring)}
+/* level list gets its own header instead of living in the side panel */
+.listwrap{display:flex;flex-direction:column;gap:8px;min-height:0;min-width:0}
+.listwrap .list{flex:1 1 0;min-height:0}
+.listhead{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:0 2px}
+.listhead .row{justify-content:flex-start;margin:0}
+.listhead .hint{flex:1;min-width:150px;margin:0;font-size:12px;text-align:left}
+@media(max-width:700px){.listwrap{display:block}.listhead{margin-bottom:6px}}
+
+/* settings: grouped cards */
+.setp{max-width:860px;text-align:left}
+.setp>h1,.setp>p{text-align:center}
+.setgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:14px;align-items:start}
+.setcard{border:2px solid #8884;border-radius:14px;padding:12px 14px;text-align:center}
+.setcard>h2{margin:0 0 10px;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--fg)}
+.setcard h2.sub{margin:12px 0 4px;font-size:12px;letter-spacing:0;text-transform:none;color:var(--mut)}
+.setcard label{margin-top:8px;text-align:left}
+.setcard input[type=range]{width:100%}
+.setcard .hint{text-align:left;margin:4px 0 0}
+@media(max-width:760px){.setgrid{grid-template-columns:1fr}}

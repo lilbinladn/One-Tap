@@ -147,42 +147,47 @@ const total=()=>Object.values(save.best).reduce((a,b)=>a+b.s,0);
 const title=()=>{const t=total();return TITLES.filter(a=>t>=a[0]).pop()[1]};
 const CP=['#e0245e','#ff3d81','#ff9f1a','#ffd24a','#7be04f','#3de0ff','#a66bff','#ffffff'];
 const sw=(a,c)=>`<button data-a="${a}" data-v="-1" class="${c?'':'sel'}">Auto</button>`+CP.map((k,i)=>`<button data-a="${a}" data-v="${i}" title="${k}" style="background:${k};width:34px;height:34px;padding:0;border-radius:50%;border-color:${c===k?'var(--fg)':'transparent'}"></button>`).join('');
-function settings(){state='menu';ui.innerHTML=`<div class="p"><h1 style="font-size:28px">Settings</h1>
- <h2>Hit sound</h2><div class="row">${seg('snd',['Off','Tick','Pop','Snap'],save.st.snd)}</div>
- <label>Volume: <b id="vv">${Math.round(save.st.vol*100)}</b>%<br><input id="vol" type="range" min="0" max="100" value="${save.st.vol*100}"></label>
- <h2>Note color</h2><div class="row">${sw('hot',save.st.hot)}</div>
- <h2>Ring color</h2><div class="row">${sw('ring',save.st.ring)}</div>
- <h2>Theme</h2><div class="row">${seg('theme',['Auto','Light','Dark'],['auto','light','dark'].indexOf(save.st.theme))}</div>
- <h2>Background effects</h2><div class="row">${seg('fx',['Off','On'],save.st.fx?1:0)}</div>
- <h2>Approach rings</h2><div class="row">${seg('ar',['Off','On'],save.st.ar?1:0)}</div>
- <h2>Tempo change text</h2><div class="row">${seg('tt',['Off','On'],save.st.tt!==0?1:0)}</div><p class="hint">Off hides the big TEMPO UP / DOWN text at the top. The small marker on the track stays.</p>
- <h2>FPS / CPS counter</h2><div class="row">${seg('fps',['Off','On'],save.st.fps?1:0)}</div><p class="hint">Shows frames per second and clicks per second in the bottom corner during a level.</p>
- <h2>Audio offset</h2><p>Currently <b>${save.off}</b> ms. Tap along to a beat and the game works out the right value for this device.</p><div class="row"><button data-a="cal_go">Calibrate…</button></div>
- <h2>Cloud sync</h2><div class="row">${seg('syn',['1 min','2 min','3 min','5 min'],[1,2,3,5].indexOf(save.st.syn||2))}</div><p class="hint">The longest wait before changes are saved to your account. Leaving the tab saves right away.</p>
- <div class="row" style="margin-top:14px"><button data-a="test">Test sound</button><button class="main" data-a="menu">Done</button></div></div>`;
- $('#vol').oninput=e=>{save.st.vol=e.target.value/100;$('#vv').textContent=e.target.value;persist()}}
+function settings(){state='menu';const sy=ui.scrollTop;ui.innerHTML=`<div class="p setp"><h1 style="font-size:28px">Settings</h1><p>Saved on this device and, when you’re logged in, synced to your account.</p>
+ <div class="setgrid">
+ <section class="setcard"><h2>Sound</h2><div class="row">${seg('snd',['Off','Tick','Pop','Snap'],save.st.snd)}</div>
+  <label>Volume: <b id="vv">${Math.round(save.st.vol*100)}</b>%<br><input id="vol" type="range" min="0" max="100" value="${save.st.vol*100}"></label>
+  <div class="row" style="margin-top:10px"><button data-a="test">Test sound</button></div></section>
+ <section class="setcard"><h2>Colors</h2>
+  <h2 class="sub">Notes</h2><div class="row">${sw('hot',save.st.hot)}</div>
+  <h2 class="sub">Ring</h2><div class="row">${sw('ring',save.st.ring)}</div>
+  <h2 class="sub">Theme</h2><div class="row">${seg('theme',['Auto','Light','Dark'],['auto','light','dark'].indexOf(save.st.theme))}</div></section>
+ <section class="setcard"><h2>During a level</h2>
+  <h2 class="sub">Background effects</h2><div class="row">${seg('fx',['Off','On'],save.st.fx?1:0)}</div>
+  <h2 class="sub">Approach rings</h2><div class="row">${seg('ar',['Off','On'],save.st.ar?1:0)}</div>
+  <h2 class="sub">Tempo change text</h2><div class="row">${seg('tt',['Off','On'],save.st.tt!==0?1:0)}</div><p class="hint">Off hides the big TEMPO UP / DOWN text. The small marker on the track stays.</p>
+  <h2 class="sub">FPS / CPS counter</h2><div class="row">${seg('fps',['Off','On'],save.st.fps?1:0)}</div><p class="hint">Shows frames per second and clicks per second in the bottom corner during a level.</p></section>
+ <section class="setcard"><h2>Timing &amp; device</h2>
+  <label>Audio offset: <b id="ov">${save.off}</b> ms<br><input id="off" type="range" min="-200" max="200" step="5" value="${save.off}"></label><p class="hint">Tap along to a beat and the game works out the right value for this device.</p>
+  <div class="row"><button data-a="cal_go">Calibrate…</button></div></section>
+ <section class="setcard"><h2>Cloud sync</h2><div class="row">${seg('syn',['1 min','2 min','3 min','5 min'],[1,2,3,5].indexOf(save.st.syn||2))}</div><p class="hint">The longest wait before changes are saved to your account. Leaving the tab saves right away.</p></section>
+ </div>
+ <div class="row" style="margin-top:14px"><button class="main" data-a="menu">Done</button></div></div>`;
+ $('#vol').oninput=e=>{save.st.vol=e.target.value/100;$('#vv').textContent=e.target.value;persist()};
+ $('#off').oninput=e=>{save.off=+e.target.value;$('#ov').textContent=save.off;persist()};
+ ui.scrollTop=sy}
 function prac(v){const B=nB(v);ui.innerHTML=`<div class="p"><h1 style="font-size:26px">Practice</h1><p>Level ${v+1}: ${L[v][5]}. Choose where to start. Health can’t run out in practice.</p><label>Start at beat <b id="pv">0</b> of ${B}<br><input id="pb" type="range" min="0" max="${B-8}" step="2" value="0"></label><div class="row" style="margin-top:14px"><button class="main" data-a="pgo" data-v="${v}">Start</button><button data-a="menu">Back</button></div></div>`;$('#pb').oninput=e=>$('#pv').textContent=e.target.value}
 const ms={u:0,s:0,l:0},keep=()=>{const s=$('.side'),l=$('.list');if(s&&l){ms.s=s.scrollTop;ms.l=l.scrollTop;ms.u=ui.scrollTop}};
 function menu(){keep();if(ED&&ED.play)edStop(true);cancelAnimationFrame(edRaf);stopCA();EDI=null;state='menu';ui.style.touchAction='';cancelAnimationFrame(raf);if(master)master.gain.value=0;killAudio();x.clearRect(0,0,W,H);
  const cd=i=>{const l=L[i],b=save.best[i],lock=false,tr=tier(i),th=i>=A1&&i<NL?' style="border-left-color:'+TH[thOf(i)][3]+'"':i==SEC?' style="border-left-color:#ff1a1a"':'';return `<button class="card" data-a="lv" data-v="${i}"${lock?' disabled':''}${th}><b>${i+1}</b><span>${l[5]}<i>${S[l[0]][0]} · ${l[1]} BPM · ${mech(l[4])}${b?' · best '+b.s.toLocaleString()+(b.f?' · FC':''):''}</i></span><u style="background:${tr.c}" title="Base ★${tr.b.toFixed(1)}${tr.s.toFixed(1)!==tr.b.toFixed(1)?' · with your speed and modifiers ★'+tr.s.toFixed(1):''}">★${tr.s.toFixed(1)}</u>${b?`<em${b.g.length>1?' class="g'+b.g.length+'"':''}>${b.g}</em>`:''}</button>`},rg=(a,b)=>{let o='';for(let i=a;i<b;i++)o+=cd(i);return o};
  const am=MODS.filter(m=>save.mods[m[0]]),sl=save.spd;
- ui.innerHTML=`<div class="wrap"><div class="side"><h1>One Tap</h1><p>Tap each note as it crosses the ring. ${title()} · ${Math.round(total()).toLocaleString()} pts</p>
+ ui.innerHTML=`<div class="wrap"><div class="side"><div class="brand"><h1>One Tap</h1><div class="chip">${title()} · ${Math.round(total()).toLocaleString()} pts</div></div>
  ${acctHTML()}
- <div class="row">${seg('on',['Campaign','Online'],save.on?1:0)}</div>
+ <button class="main start" data-a="endless">Endless<small>${save.endBest?'Best: '+save.endBest+' beats':'Survive as long as you can'}</small></button>
+ <div class="nav"><button data-a="rank">Rankings</button><button data-a="ach">Achievements <b>${ACH.filter(q=>save.ach[q[0]]).length}/${ACH.length}</b></button><button data-a="lb_open">Leaderboards</button><button data-a="fr_open">Friends</button><button data-a="cnew">Level editor</button><button data-a="set">Settings</button></div>
  <h2>Timing difficulty</h2><div class="row">${seg('diff',DN,save.diff)}</div>
  <h2>Speed ${sl<1?'(unranked)':sl>1?'(bonus score)':''}</h2><label style="margin-top:0">Speed: <b id="spv">${Math.round(sl*100)}</b>%<br><input id="spd" type="range" min="50" max="200" step="5" value="${Math.round(sl*100)}"></label>
  <h2>Modifiers · score ×${mulOf(save.mods,sl).toFixed(2)}</h2><div class="row">${MODS.map(m=>`<button data-a="mod" data-k="${m[0]}" title="${m[2]}" class="${save.mods[m[0]]?'sel':''}">${m[1]}</button>`).join('')}</div>
  <p>${am.length?am.map(m=>'<b>'+m[1]+'</b>: '+m[2]).join('<br>'):'Optional rules that give bonus score. Faster speeds count too.'}</p>
- <h2>Showcase first</h2><div class="row">${seg('sc',['Off','On'],save.sc?1:0)}</div>
- <h2>Practice (pick a start point)</h2><div class="row">${seg('pr',['Off','On'],save.pr?1:0)}</div>
- <div class="row" style="margin-top:14px"><button class="main" data-a="endless">Endless${save.endBest?' · best '+save.endBest:''}</button><button data-a="rank">Rankings</button><button data-a="set">Settings</button><button data-a="cnew">Level editor</button><button data-a="fr_open">Friends</button><button data-a="lb_open">Leaderboards</button><button data-a="ach">Achievements ${ACH.filter(a=>save.ach[a[0]]).length}/${ACH.length}</button></div>
- <label>Audio offset: <b id="ov">${save.off}</b> ms<br><input id="off" type="range" min="-200" max="200" step="5" value="${save.off}"></label>
- <div class="row" style="margin-top:6px"><button data-a="cal_go">Calibrate offset</button></div>
- <p>Tap with Space, any key, mouse or touch. You can press a new input while another is held, so every key, mouse button and finger counts on its own. R retries, Esc returns here.</p></div>
- <div class="list" id="onl">${save.on?onlHTML():`<p class="hint" style="margin:0 4px">Levels in every area run from easiest to hardest.</p><h2>Area 1: Downbeat · ${A1} levels · ${srng(0,A1)}</h2>${rg(0,A1)}<h2>Area 2: Afterglow · 50 levels · ${srng(A1,100)}</h2>${rg(A1,100)}<h2>Area 3: Dreamstate · 50 levels · ${srng(100,150)}</h2>${rg(100,150)}<h2>Area 4: Zenith · 50 levels · ${srng(150,NL)}</h2>${rg(150,NL)}${save.sec?'<h2 style="color:#ff1a1a">Something is waiting</h2>'+cd(SEC):''}<h2>Custom levels · ${save.custom.length}</h2>${save.custom.map(ccd).join('')||'<p>Nothing here yet. Open the level editor to chart your own, or import a .otm level someone sent you.</p>'}<div class="row" style="margin:8px 0"><button class="main" data-a="cnew">+ New level</button><button data-a="cimp">Import level…</button></div><p class="hint">Share a level with the Share button. It saves a small .otm file. Import one here or drop it anywhere on this screen.</p>`}</div></div>`;
+ <div class="toggles"><button class="tg ${save.sc?'on':''}" data-a="sc" data-v="${save.sc?0:1}" title="Show a short preview of the chart before the level starts"><span>Showcase first</span><b>${save.sc?'On':'Off'}</b></button><button class="tg ${save.pr?'on':''}" data-a="pr" data-v="${save.pr?0:1}" title="Ask where to start when you pick a level"><span>Practice start point</span><b>${save.pr?'On':'Off'}</b></button></div>
+ <p class="hint">Tap with Space, any key, mouse or touch. You can press a new input while another is held, so every key, mouse button and finger counts on its own. R retries, Esc returns here.</p></div>
+ <div class="listwrap"><div class="listhead"><div class="row">${seg('on',['Campaign','Online'],save.on?1:0)}</div><p class="hint">${save.on?'Levels picked by the community team.':'Levels in every area run from easiest to hardest.'}</p></div><div class="list" id="onl">${save.on?onlHTML():`<h2>Area 1: Downbeat · ${A1} levels · ${srng(0,A1)}</h2>${rg(0,A1)}<h2>Area 2: Afterglow · 50 levels · ${srng(A1,100)}</h2>${rg(A1,100)}<h2>Area 3: Dreamstate · 50 levels · ${srng(100,150)}</h2>${rg(100,150)}<h2>Area 4: Zenith · 50 levels · ${srng(150,NL)}</h2>${rg(150,NL)}${save.sec?'<h2 style="color:#ff1a1a">Something is waiting</h2>'+cd(SEC):''}<h2>Custom levels · ${save.custom.length}</h2>${save.custom.map(ccd).join('')||'<p>Nothing here yet. Open the level editor to chart your own, or import a .otm level someone sent you.</p>'}<div class="row" style="margin:8px 0"><button class="main" data-a="cnew">+ New level</button><button data-a="cimp">Import level…</button></div><p class="hint">Share a level with the Share button. It saves a small .otm file. Import one here or drop it anywhere on this screen.</p>`}</div></div></div>`;
  const s2=$('.side'),l2=$('.list');if(s2&&l2){s2.scrollTop=ms.s;l2.scrollTop=ms.l;ui.scrollTop=ms.u}
  if(save.on){CM.k=onlKey();if(cmOK()&&!CM.loaded&&!CM.busy)cmLoad()}
- $('#off').oninput=e=>{save.off=+e.target.value;$('#ov').textContent=save.off;persist()};
  $('#spd').oninput=e=>{save.spd=Math.round(+e.target.value)/100;$('#spv').textContent=e.target.value};$('#spd').onchange=()=>{persist();menu()}}
 function rankings(){state='menu';const runs=save.runs.map((r,i)=>`<tr><td>${i+1}</td><td>Lv ${r.l+1} ${L[r.l][5]}</td><td>${DN[r.d]}${r.m?' · '+r.m:''}</td><td>${r.s.toLocaleString()}</td><td>${r.a}% ${r.g}</td></tr>`).join('')||'<tr><td colspan=5>No ranked runs yet. Clear a level at full speed.</td></tr>';
  ui.innerHTML=`<div class="p"><h1>${title()}</h1><p>Total score ${Math.round(total()).toLocaleString()}. Next title at ${(TITLES.find(a=>a[0]>total())||[0,'max'])[0].toLocaleString()||''}. Scores are multiplied by timing difficulty (Easy ×0.5 up to Impossible ×2.5), plus bonuses for faster speeds and modifiers.<br>Grades: S is 97%+ accuracy. SS needs a full combo at 97%+. SSS needs every note Perfect. Practice runs don’t count.</p>
@@ -271,7 +276,7 @@ function draw(n){const{bg,fg,hot,ring,mut}=cols,cb=bt(n),hx=(F.r||F.sc)?W/2:mo.m
  x.font='700 15px Space Grotesk,system-ui';x.textAlign='left';x.fillStyle=fg;x.fillText(HC.a,20,56);
  x.globalAlpha=.7;x.fillText(HC.b,20,76);x.globalAlpha=1;
  x.textAlign='right';x.font='700 38px Space Grotesk,system-ui';x.fillText(mo.nf?'NO SCORE':String(Math.round(pts)).padStart(8,'0'),W-20,44);x.font='700 16px Space Grotesk,system-ui';const tt=st.P+st.G+st.M;x.globalAlpha=.8;x.fillText((tt?((st.P+.7*st.G)/tt*100).toFixed(2):'100.00')+'%',W-20,68);x.globalAlpha=1;
- x.textAlign='left';x.font='italic 700 58px Space Grotesk,system-ui';x.fillStyle=combo?hot:fg;x.globalAlpha=combo?1:.3;x.fillText(combo+'x',20,H-26);x.globalAlpha=1;
+ x.textAlign='center';x.font='italic 700 42px Space Grotesk,system-ui';x.fillStyle=combo?hot:fg;x.globalAlpha=combo?1:.3;x.fillText(combo+'x',W/2,H-42);x.globalAlpha=1;
  x.fillStyle=fg;x.globalAlpha=.15;x.fillRect(0,H-6,W,6);x.globalAlpha=.7;x.fillRect(0,H-6,W*Math.max(0,Math.min(1,n/endT)),6);x.globalAlpha=1;
  if(save.st.fps){const pt=performance.now();FT.push(pt);while(FT.length&&pt-FT[0]>1000)FT.shift();while(CT.length&&pt-CT[0]>1000)CT.shift();x.textAlign='right';x.font='700 14px Space Grotesk,system-ui';x.fillStyle=fg;x.globalAlpha=.75;x.fillText(FT.length+' FPS  ·  '+CT.length+' CPS',W-20,H-18);x.globalAlpha=1}
  {let by=Math.max(100,cy-195);x.textAlign='center';
