@@ -1,15 +1,52 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Each player can only touch their own save documents: users/<their uid>/data/*
-    match /users/{uid}/data/{docId} {
-      allow read, delete: if request.auth != null && request.auth.uid == uid;
-      allow create, update: if request.auth != null && request.auth.uid == uid
-        && request.resource.data.keys().hasOnly(['ts', 'j'])
-        && request.resource.data.ts is number
-        && request.resource.data.j is string
-        && request.resource.data.j.size() < 400000;
+
+    function signedIn() { return request.auth != null; }
+    function email()    { return request.auth.token.email; }
+
+    // The head account is the username "micah" (stored as micah@users.onetap-game.app).
+    // Register that username YOURSELF before anyone else can, because whoever owns that login is the head.
+    function isHead() { return signedIn() && email() == 'micah@users.onetap-game.app'; }
+    function isCurator() {
+      return signedIn() && exists(/databases/$(database)/documents/curators/$(request.auth.uid));
     }
-    // Everything else is closed.
+    function canCurate() { return isHead() || isCurator(); }
+
+    // Each player's own progress and levels (same as before: only the owner can read or write).
+    match /users/{uid}/data/{doc} {
+      allow read, write: if signedIn() && request.auth.uid == uid;
+
+      // NEW: anybody signed in may read ONE level document, but only while that level
+      // (or its whole account) is featured in the community tab. Progress docs stay private.
+      allow get: if signedIn()
+        && doc.matches('c_.*')
+        && ( exists(/databases/$(database)/documents/community/$('acct_' + uid))
+          || exists(/databases/$(database)/documents/community/$('lvl_' + uid + '_' + doc)) );
+    }
+
+    // Public index of a player's synced levels so curators can find them by username.
+    // Only username accounts get one, and the name has to match the login.
+    match /profiles/{uid} {
+      allow read: if signedIn();
+      allow create, update: if signedIn()
+        && request.auth.uid == uid
+        && email().matches('.*@users\\.onetap-game\\.app')
+        && request.resource.data.name == email().split('@')[0]
+        && request.resource.data.keys().hasOnly(['name', 'lv', 'ts']);
+      allow delete: if false;
+    }
+
+    // What shows up in the community tab. Head account and curators only.
+    match /community/{id} {
+      allow read: if signedIn();
+      allow create, update, delete: if canCurate();
+    }
+
+    // Who the curators are. Only the head account can change this.
+    match /curators/{uid} {
+      allow read: if signedIn();
+      allow write: if isHead();
+    }
   }
 }

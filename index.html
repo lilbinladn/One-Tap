@@ -32,7 +32,13 @@ try{
   signOut:()=>Au.signOut(auth),reset:e=>Au.sendPasswordResetEmail(auth,e),
   getDocs:async uid=>toD(await Fs.getDocs(col(uid))),
   listen:(uid,cb,er)=>Fs.onSnapshot(col(uid),sn=>cb({docs:toD(sn),fromCache:sn.metadata.fromCache,pending:sn.metadata.hasPendingWrites}),er),
-  setDoc:(uid,id,v)=>Fs.setDoc(Fs.doc(db,'users',uid,'data',id),v),delDoc:(uid,id)=>Fs.deleteDoc(Fs.doc(db,'users',uid,'data',id))};
+  setDoc:(uid,id,v)=>Fs.setDoc(Fs.doc(db,'users',uid,'data',id),v),delDoc:(uid,id)=>Fs.deleteDoc(Fs.doc(db,'users',uid,'data',id)),
+  // community helpers: paths are arrays like ['community','acct_123']
+  cget:async p=>{const s=await Fs.getDoc(Fs.doc(db,...p));return s.exists()?s.data():null},
+  cset:(p,v,merge)=>Fs.setDoc(Fs.doc(db,...p),v,merge?{merge:true}:{}),
+  cdel:p=>Fs.deleteDoc(Fs.doc(db,...p)),
+  clist:async p=>(await Fs.getDocs(Fs.collection(db,...p))).docs.map(d=>({id:d.id,d:d.data()})),
+  cfind:async(p,f,v)=>(await Fs.getDocs(Fs.query(Fs.collection(db,...p),Fs.where(f,'==',v)))).docs.map(d=>({id:d.id,d:d.data()}))};
 }catch(e){console.warn('Accounts unavailable:',e.message);FB=null}
 window.fbInit&&window.fbInit(FB);
 </script>
