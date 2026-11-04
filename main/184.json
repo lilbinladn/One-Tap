@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "id": 183,
+  "name": "Cataclysm",
+  "song": "paper-lanterns",
+  "bpm": 237,
+  "beats": 64,
+  "subdivisions": [
+    4,
+    3
+  ],
+  "density": 0.78,
+  "seed": 278458,
+  "mechanics": {
+    "q": 1,
+    "li": 0.44,
+    "wp": 0.49,
+    "sc": 0.5,
+    "s": 0.7
+  },
+  "notes": null
+}

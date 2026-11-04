@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "id": 158,
+  "name": "Flashpoint",
+  "song": "pocket-galaxy",
+  "bpm": 187,
+  "beats": 64,
+  "subdivisions": [
+    4,
+    2
+  ],
+  "density": 0.68,
+  "seed": 253056,
+  "mechanics": {
+    "x": 0.33599999999999997,
+    "d": 0.43600000000000005
+  },
+  "notes": null
+}

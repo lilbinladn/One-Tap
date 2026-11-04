@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "id": 84,
+  "name": "Sunburst",
+  "song": "iron-lullaby",
+  "bpm": 175,
+  "beats": 56,
+  "subdivisions": [
+    4,
+    2
+  ],
+  "density": 0.7,
+  "seed": 131908,
+  "mechanics": {
+    "tr": 0.3,
+    "q": 1,
+    "s": 0.7,
+    "w": 1
+  },
+  "notes": null
+}

@@ -1,0 +1,35 @@
+{
+  "version": 2,
+  "id": 139,
+  "name": "Ember Sky",
+  "song": "iron-lullaby",
+  "bpm": 211,
+  "beats": 60,
+  "subdivisions": [
+    4,
+    3
+  ],
+  "density": 0.73,
+  "seed": 232539,
+  "mechanics": {
+    "r": 4,
+    "q": 1,
+    "tr": 0.45199999999999996,
+    "h": 0.352,
+    "t": [
+      [
+        16,
+        186
+      ],
+      [
+        32,
+        231
+      ],
+      [
+        48,
+        201
+      ]
+    ]
+  },
+  "notes": null
+}

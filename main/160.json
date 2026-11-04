@@ -1,0 +1,33 @@
+{
+  "version": 2,
+  "id": 159,
+  "name": "Thunderhead",
+  "song": "iron-lullaby",
+  "bpm": 176,
+  "beats": 64,
+  "subdivisions": [
+    4,
+    2
+  ],
+  "density": 0.65,
+  "seed": 247194,
+  "mechanics": {
+    "q": 1,
+    "r": 4,
+    "t": [
+      [
+        16,
+        151
+      ],
+      [
+        32,
+        196
+      ],
+      [
+        48,
+        166
+      ]
+    ]
+  },
+  "notes": null
+}

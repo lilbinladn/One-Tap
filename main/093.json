@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "id": 92,
+  "name": "Bullet hell",
+  "song": "chrome-hearts",
+  "bpm": 185,
+  "beats": 56,
+  "subdivisions": [
+    4
+  ],
+  "density": 0.72,
+  "seed": 52771,
+  "mechanics": {
+    "tr": 0.35,
+    "ph": 0.3,
+    "s": 0.6
+  },
+  "notes": null
+}

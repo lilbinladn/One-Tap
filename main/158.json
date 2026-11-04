@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "id": 157,
+  "name": "Stormfront",
+  "song": "overclock",
+  "bpm": 185,
+  "beats": 64,
+  "subdivisions": [
+    4,
+    2
+  ],
+  "density": 0.67,
+  "seed": 252079,
+  "mechanics": {
+    "ro": 0.33199999999999996,
+    "sc": 0.5
+  },
+  "notes": null
+}

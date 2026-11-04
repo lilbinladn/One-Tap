@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "id": 74,
+  "name": "Overtone",
+  "song": "chrome-hearts",
+  "bpm": 165,
+  "beats": 56,
+  "subdivisions": [
+    4,
+    2
+  ],
+  "density": 0.65,
+  "seed": 44955,
+  "mechanics": {
+    "ph": 0.3,
+    "d": 0.4
+  },
+  "notes": null
+}

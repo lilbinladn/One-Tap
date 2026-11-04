@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "id": 97,
+  "name": "Afterimage",
+  "song": "supernova",
+  "bpm": 200,
+  "beats": 56,
+  "subdivisions": [
+    4
+  ],
+  "density": 0.78,
+  "seed": 56679,
+  "mechanics": {
+    "q": 1,
+    "ph": 0.3,
+    "wp": 0.3,
+    "tr": 0.3,
+    "r": 4,
+    "d": 0.4,
+    "t": [
+      [
+        16,
+        160
+      ],
+      [
+        32,
+        210
+      ]
+    ]
+  },
+  "notes": null
+}

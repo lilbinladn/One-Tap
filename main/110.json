@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "id": 109,
+  "name": "Moonwell",
+  "song": "supernova",
+  "bpm": 155,
+  "beats": 60,
+  "subdivisions": [
+    4,
+    2
+  ],
+  "density": 0.59,
+  "seed": 198344,
+  "mechanics": {
+    "s": 0.7,
+    "t": [
+      [
+        16,
+        130
+      ],
+      [
+        32,
+        175
+      ],
+      [
+        48,
+        145
+      ]
+    ]
+  },
+  "notes": null
+}

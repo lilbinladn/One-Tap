@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "id": 95,
+  "name": "Singularity",
+  "song": "midnight-circuit",
+  "bpm": 195,
+  "beats": 56,
+  "subdivisions": [
+    4,
+    3
+  ],
+  "density": 0.78,
+  "seed": 55702,
+  "mechanics": {
+    "s": 0.9,
+    "tr": 0.3,
+    "li": 0.3,
+    "ro": 0.25,
+    "w": 1
+  },
+  "notes": null
+}

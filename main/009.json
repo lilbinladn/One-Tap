@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "id": 8,
+  "name": "Snooze button",
+  "song": "paper-lanterns",
+  "bpm": 112,
+  "beats": 44,
+  "subdivisions": [
+    2
+  ],
+  "density": 0.7,
+  "seed": 100644,
+  "mechanics": {
+    "h": 0.2
+  },
+  "notes": null
+}

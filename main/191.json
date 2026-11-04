@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "id": 190,
+  "name": "Meteor",
+  "song": "sunset-relay",
+  "bpm": 246,
+  "beats": 64,
+  "subdivisions": [
+    4,
+    3,
+    4
+  ],
+  "density": 0.8,
+  "seed": 283343,
+  "mechanics": {
+    "li": 0.45999999999999996,
+    "ro": 0.45999999999999996,
+    "s": 0.7,
+    "sc": 0.5,
+    "r": 4,
+    "wp": 0.5
+  },
+  "notes": null
+}

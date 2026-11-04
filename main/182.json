@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "id": 181,
+  "name": "Zero Gravity",
+  "song": "chrome-hearts",
+  "bpm": 231,
+  "beats": 64,
+  "subdivisions": [
+    4,
+    3
+  ],
+  "density": 0.77,
+  "seed": 275527,
+  "mechanics": {
+    "li": 0.428,
+    "x": 0.428,
+    "d": 0.5,
+    "ro": 0.428,
+    "w": 1
+  },
+  "notes": null
+}

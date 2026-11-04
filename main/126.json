@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "id": 125,
+  "name": "Hollow Night",
+  "song": "zero-hour",
+  "bpm": 192,
+  "beats": 60,
+  "subdivisions": [
+    4,
+    3
+  ],
+  "density": 0.68,
+  "seed": 220815,
+  "mechanics": {
+    "x": 0.404,
+    "sc": 0.5,
+    "wp": 0.45399999999999996
+  },
+  "notes": null
+}

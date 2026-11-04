@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "id": 1,
+  "name": "Pulse check",
+  "song": "pocket-galaxy",
+  "bpm": 96,
+  "beats": 44,
+  "subdivisions": [
+    1,
+    1,
+    2
+  ],
+  "density": 0.2,
+  "seed": 97713,
+  "mechanics": {},
+  "notes": null
+}

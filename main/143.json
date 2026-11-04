@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "id": 142,
+  "name": "Kaleidoscope",
+  "song": "pocket-galaxy",
+  "bpm": 220,
+  "beats": 60,
+  "subdivisions": [
+    4,
+    3,
+    4
+  ],
+  "density": 0.76,
+  "seed": 238401,
+  "mechanics": {
+    "d": 0.5,
+    "wp": 0.5,
+    "sc": 0.5,
+    "w": 1,
+    "s": 0.7
+  },
+  "notes": null
+}

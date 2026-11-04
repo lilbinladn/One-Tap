@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "id": 171,
+  "name": "Backdraft",
+  "song": "zero-hour",
+  "bpm": 210,
+  "beats": 64,
+  "subdivisions": [
+    4,
+    3
+  ],
+  "density": 0.72,
+  "seed": 264780,
+  "mechanics": {
+    "r": 4,
+    "li": 0.384,
+    "h": 0.28400000000000003,
+    "wp": 0.434
+  },
+  "notes": null
+}

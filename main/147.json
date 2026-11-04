@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "id": 146,
+  "name": "Serenade",
+  "song": "static-bloom",
+  "bpm": 225,
+  "beats": 60,
+  "subdivisions": [
+    4,
+    3,
+    4
+  ],
+  "density": 0.77,
+  "seed": 241332,
+  "mechanics": {
+    "tr": 0.488,
+    "w": 1,
+    "x": 0.488,
+    "ro": 0.488,
+    "sg": 0.5
+  },
+  "notes": null
+}

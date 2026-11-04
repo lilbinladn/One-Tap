@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "id": 163,
+  "name": "Crosswind",
+  "song": "static-bloom",
+  "bpm": 193,
+  "beats": 64,
+  "subdivisions": [
+    4,
+    2
+  ],
+  "density": 0.69,
+  "seed": 255987,
+  "mechanics": {
+    "s": 0.7,
+    "tr": 0.348,
+    "ro": 0.348
+  },
+  "notes": null
+}

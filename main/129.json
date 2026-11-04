@@ -1,0 +1,34 @@
+{
+  "version": 2,
+  "id": 128,
+  "name": "Reverie",
+  "song": "crystal-rain",
+  "bpm": 188,
+  "beats": 60,
+  "subdivisions": [
+    4,
+    3
+  ],
+  "density": 0.68,
+  "seed": 218861,
+  "mechanics": {
+    "sc": 0.5,
+    "d": 0.496,
+    "w": 1,
+    "t": [
+      [
+        16,
+        163
+      ],
+      [
+        32,
+        208
+      ],
+      [
+        48,
+        178
+      ]
+    ]
+  },
+  "notes": null
+}

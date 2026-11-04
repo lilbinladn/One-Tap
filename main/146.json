@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "id": 145,
+  "name": "Zephyr",
+  "song": "overclock",
+  "bpm": 219,
+  "beats": 60,
+  "subdivisions": [
+    4,
+    3,
+    4
+  ],
+  "density": 0.75,
+  "seed": 237424,
+  "mechanics": {
+    "s": 0.7,
+    "x": 0.472,
+    "tr": 0.472,
+    "r": 4,
+    "ro": 0.472
+  },
+  "notes": null
+}

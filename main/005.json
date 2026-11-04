@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "id": 4,
+  "name": "Skipping stones",
+  "song": "velvet-static",
+  "bpm": 108,
+  "beats": 44,
+  "subdivisions": [
+    2
+  ],
+  "density": 0.5,
+  "seed": 98690,
+  "mechanics": {},
+  "notes": null
+}

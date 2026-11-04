@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "id": 24,
+  "name": "Crosswind",
+  "song": "zero-hour",
+  "bpm": 145,
+  "beats": 44,
+  "subdivisions": [
+    4,
+    2
+  ],
+  "density": 0.6,
+  "seed": 106506,
+  "mechanics": {
+    "w": 1,
+    "x": 0.2
+  },
+  "notes": null
+}

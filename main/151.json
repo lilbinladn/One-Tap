@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "id": 150,
+  "name": "Ascent",
+  "song": "midnight-circuit",
+  "bpm": 170,
+  "beats": 64,
+  "subdivisions": [
+    4,
+    2
+  ],
+  "density": 0.64,
+  "seed": 244263,
+  "mechanics": {
+    "ro": 0.3,
+    "w": 1
+  },
+  "notes": null
+}

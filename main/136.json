@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "id": 135,
+  "name": "Wanderer",
+  "song": "glass-garden",
+  "bpm": 204,
+  "beats": 60,
+  "subdivisions": [
+    4,
+    3
+  ],
+  "density": 0.72,
+  "seed": 228631,
+  "mechanics": {
+    "d": 0.5,
+    "tr": 0.436,
+    "sg": 0.486,
+    "rb": 0.436
+  },
+  "notes": null
+}

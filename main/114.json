@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "id": 113,
+  "name": "Candlewick",
+  "song": "sunset-relay",
+  "bpm": 174,
+  "beats": 60,
+  "subdivisions": [
+    4,
+    2
+  ],
+  "density": 0.64,
+  "seed": 210068,
+  "mechanics": {
+    "sc": 0.5,
+    "w": 1
+  },
+  "notes": null
+}

@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "id": 83,
+  "name": "Burst mode",
+  "song": "crystal-rain",
+  "bpm": 155,
+  "beats": 56,
+  "subdivisions": [
+    4,
+    3
+  ],
+  "density": 0.65,
+  "seed": 43001,
+  "mechanics": {
+    "tr": 0.3,
+    "ro": 0.25,
+    "t": [
+      [
+        16,
+        130
+      ],
+      [
+        32,
+        170
+      ]
+    ]
+  },
+  "notes": null
+}

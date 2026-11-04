@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "id": 188,
+  "name": "Apogee",
+  "song": "pocket-galaxy",
+  "bpm": 244,
+  "beats": 64,
+  "subdivisions": [
+    4,
+    3
+  ],
+  "density": 0.8,
+  "seed": 282366,
+  "mechanics": {
+    "q": 1,
+    "tr": 0.45599999999999996,
+    "sc": 0.5,
+    "d": 0.5,
+    "ro": 0.45599999999999996
+  },
+  "notes": null
+}

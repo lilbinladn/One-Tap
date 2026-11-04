@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "id": 57,
+  "name": "Roll call",
+  "song": "crystal-rain",
+  "bpm": 120,
+  "beats": 56,
+  "subdivisions": [
+    2,
+    4
+  ],
+  "density": 0.5,
+  "seed": 31277,
+  "mechanics": {
+    "ro": 0.3
+  },
+  "notes": null
+}

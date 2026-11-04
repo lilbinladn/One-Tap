@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "id": 98,
+  "name": "Supernova",
+  "song": "supernova",
+  "bpm": 210,
+  "beats": 56,
+  "subdivisions": [
+    4,
+    3
+  ],
+  "density": 0.8,
+  "seed": 57656,
+  "mechanics": {
+    "h": 0.2,
+    "tr": 0.3,
+    "ro": 0.25,
+    "li": 0.25,
+    "wp": 0.3,
+    "ph": 0.3,
+    "d": 0.4,
+    "q": 1,
+    "s": 0.8,
+    "w": 1,
+    "r": 4,
+    "t": [
+      [
+        16,
+        170
+      ],
+      [
+        32,
+        220
+      ]
+    ]
+  },
+  "notes": null
+}

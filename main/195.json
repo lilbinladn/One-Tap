@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "id": 194,
+  "name": "Rift",
+  "song": "static-bloom",
+  "bpm": 250,
+  "beats": 64,
+  "subdivisions": [
+    4,
+    3,
+    4
+  ],
+  "density": 0.81,
+  "seed": 285297,
+  "mechanics": {
+    "x": 0.46799999999999997,
+    "w": 1,
+    "tr": 0.46799999999999997,
+    "s": 0.7,
+    "r": 4,
+    "q": 1
+  },
+  "notes": null
+}

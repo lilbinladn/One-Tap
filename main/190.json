@@ -1,0 +1,36 @@
+{
+  "version": 2,
+  "id": 189,
+  "name": "Stormbreaker",
+  "song": "overclock",
+  "bpm": 242,
+  "beats": 64,
+  "subdivisions": [
+    4,
+    3
+  ],
+  "density": 0.79,
+  "seed": 281389,
+  "mechanics": {
+    "r": 4,
+    "w": 1,
+    "s": 0.7,
+    "d": 0.5,
+    "q": 1,
+    "t": [
+      [
+        16,
+        217
+      ],
+      [
+        32,
+        262
+      ],
+      [
+        48,
+        232
+      ]
+    ]
+  },
+  "notes": null
+}

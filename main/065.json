@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "id": 64,
+  "name": "Spin cycle",
+  "song": "midnight-circuit",
+  "bpm": 130,
+  "beats": 56,
+  "subdivisions": [
+    2,
+    4
+  ],
+  "density": 0.6,
+  "seed": 39093,
+  "mechanics": {
+    "s": 0.5
+  },
+  "notes": null
+}

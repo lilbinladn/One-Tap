@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "id": 17,
+  "name": "Quickstep",
+  "song": "overclock",
+  "bpm": 135,
+  "beats": 44,
+  "subdivisions": [
+    2,
+    4
+  ],
+  "density": 0.6,
+  "seed": 104552,
+  "mechanics": {
+    "h": 0.2
+  },
+  "notes": null
+}

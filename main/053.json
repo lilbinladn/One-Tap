@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "id": 52,
+  "name": "Dusk run",
+  "song": "pocket-galaxy",
+  "bpm": 110,
+  "beats": 56,
+  "subdivisions": [
+    2
+  ],
+  "density": 0.5,
+  "seed": 118230,
+  "mechanics": {
+    "li": 0.3
+  },
+  "notes": null
+}

@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "id": 121,
+  "name": "Dewdrop",
+  "song": "chrome-hearts",
+  "bpm": 185,
+  "beats": 60,
+  "subdivisions": [
+    4,
+    3
+  ],
+  "density": 0.67,
+  "seed": 216907,
+  "mechanics": {
+    "x": 0.388,
+    "rb": 0.388,
+    "h": 0.28800000000000003
+  },
+  "notes": null
+}

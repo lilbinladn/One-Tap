@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "id": 68,
+  "name": "Restless",
+  "song": "midnight-circuit",
+  "bpm": 140,
+  "beats": 56,
+  "subdivisions": [
+    4,
+    2
+  ],
+  "density": 0.55,
+  "seed": 38116,
+  "mechanics": {
+    "ph": 0.3,
+    "ro": 0.2
+  },
+  "notes": null
+}

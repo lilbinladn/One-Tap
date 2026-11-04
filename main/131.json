@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "id": 130,
+  "name": "Cloudburst",
+  "song": "sunset-relay",
+  "bpm": 198,
+  "beats": 60,
+  "subdivisions": [
+    4,
+    3
+  ],
+  "density": 0.7,
+  "seed": 224723,
+  "mechanics": {
+    "ro": 0.42,
+    "r": 4,
+    "x": 0.42,
+    "w": 1
+  },
+  "notes": null
+}

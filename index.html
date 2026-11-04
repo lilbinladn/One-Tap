@@ -1,50 +1,45 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
-<!-- Relative URLs below resolve against this base. Change "./" to your site root (e.g. "/") if you host the game in a subfolder. -->
+<!-- Relative URLs below resolve against this base. Change "./" to your site root (e.g. "/") if you host the game in a subfolder.
+     The ?v=3 on every css/js file is a cache buster: bump it whenever those files change, so browsers
+     that kept an old copy of a same-named file (js/main.js existed in an earlier layout) load the new one. -->
 <base href="./">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>One Tap</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/main.css?v=3">
+<link rel="stylesheet" href="css/menu.css?v=3">
+<link rel="stylesheet" href="css/gameplay.css?v=3">
+<link rel="stylesheet" href="css/editor.css?v=3">
 </head><body>
 <canvas id="c"></canvas><div id="ui"></div>
-<script src="game.js"></script>
-<script type="module">
-/* Paste your Firebase web app config here (Firebase console > Project settings > Your apps > Web app).
-   These values identify your project; they are not secret. The Firestore rules are what keep each player's data private. */
-const firebaseConfig={
-  apiKey:"AIzaSyAtlvupuBuBymjyc0MwhKSCebOzgjgA-8Q",
-  authDomain:"one-tap-b0dd8.firebaseapp.com",
-  projectId:"one-tap-b0dd8",
-  storageBucket:"one-tap-b0dd8.firebasestorage.app",
-  messagingSenderId:"550909148993",
-  appId:"1:550909148993:web:9a268a5cb97e27c39a2bc0"
-};
-let FB=null;
-try{
- if(/PASTE/.test(firebaseConfig.apiKey))throw new Error('Firebase config not filled in yet');
- const B='https://www.gstatic.com/firebasejs/10.14.1/';
- const[A,Au,Fs]=await Promise.all([import(B+'firebase-app.js'),import(B+'firebase-auth.js'),import(B+'firebase-firestore.js')]);
- const app=A.initializeApp(firebaseConfig),auth=Au.getAuth(app),db=Fs.getFirestore(app);
- const col=uid=>Fs.collection(db,'users',uid,'data');
- const toD=sn=>{const D={};sn.forEach(d=>{const v=d.data();if(v&&typeof v.j==='string')D[d.id]={ts:v.ts||0,j:v.j}});return D};
- FB={onAuth:cb=>Au.onAuthStateChanged(auth,cb),signIn:(e,p)=>Au.signInWithEmailAndPassword(auth,e,p),signUp:(e,p)=>Au.createUserWithEmailAndPassword(auth,e,p),
-  cur:()=>auth.currentUser,delUser:()=>Au.deleteUser(auth.currentUser),setName:n=>Au.updateProfile(auth.currentUser,{displayName:n}),
-  signOut:()=>Au.signOut(auth),reset:e=>Au.sendPasswordResetEmail(auth,e),
-  // change password: Firebase needs the current password again first
-  changePw:async(cur,nw)=>{const u=auth.currentUser;await Au.reauthenticateWithCredential(u,Au.EmailAuthProvider.credential(u.email,cur));await Au.updatePassword(u,nw)},
-  getDocs:async uid=>toD(await Fs.getDocs(col(uid))),
-  listen:(uid,cb,er)=>Fs.onSnapshot(col(uid),sn=>cb({docs:toD(sn),fromCache:sn.metadata.fromCache,pending:sn.metadata.hasPendingWrites}),er),
-  setDoc:(uid,id,v)=>Fs.setDoc(Fs.doc(db,'users',uid,'data',id),v),delDoc:(uid,id)=>Fs.deleteDoc(Fs.doc(db,'users',uid,'data',id)),
-  // community helpers: paths are arrays like ['community','acct_123']
-  cget:async p=>{const s=await Fs.getDoc(Fs.doc(db,...p));return s.exists()?s.data():null},
-  cset:(p,v,merge)=>Fs.setDoc(Fs.doc(db,...p),v,merge?{merge:true}:{}),
-  cdel:p=>Fs.deleteDoc(Fs.doc(db,...p)),
-  // top n documents of a collection, highest value of field f first (used by the leaderboards)
-  ctop:async(p,f,n)=>(await Fs.getDocs(Fs.query(Fs.collection(db,...p),Fs.orderBy(f,'desc'),Fs.limit(n)))).docs.map(d=>({id:d.id,d:d.data()})),
-  clist:async p=>(await Fs.getDocs(Fs.collection(db,...p))).docs.map(d=>({id:d.id,d:d.data()})),
-  cfind:async(p,f,v)=>(await Fs.getDocs(Fs.query(Fs.collection(db,...p),Fs.where(f,'==',v)))).docs.map(d=>({id:d.id,d:d.data()}))};
-}catch(e){console.warn('Accounts unavailable:',e.message);FB=null}
-window.fbInit&&window.fbInit(FB);
-</script>
+<script src="js/core/mechanics.js?v=3"></script>
+<script src="js/core/difficulty.js?v=3"></script>
+<script src="js/levels/legacy-order.js?v=3"></script>
+<script src="js/core/state.js?v=3"></script>
+<script src="js/ui/dom.js?v=3"></script>
+<script src="js/levels/validator.js?v=3"></script>
+<script src="js/levels/loader.js?v=3"></script>
+<script src="js/levels/generator.js?v=3"></script>
+<script src="js/audio/player.js?v=3"></script>
+<script src="js/audio/synthesizer.js?v=3"></script>
+<script src="js/audio/calibration.js?v=3"></script>
+<script src="js/render/backgrounds.js?v=3"></script>
+<script src="js/render/effects.js?v=3"></script>
+<script src="js/render/renderer.js?v=3"></script>
+<script src="js/core/timing.js?v=3"></script>
+<script src="js/core/scoring.js?v=3"></script>
+<script src="js/core/game.js?v=3"></script>
+<script src="js/ui/results.js?v=3"></script>
+<script src="js/ui/menu.js?v=3"></script>
+<script src="js/ui/settings.js?v=3"></script>
+<script src="js/editor/tools.js?v=3"></script>
+<script src="js/editor/waveform.js?v=3"></script>
+<script src="js/editor/editor.js?v=3"></script>
+<script src="js/core/input.js?v=3"></script>
+<script src="js/online/sync.js?v=3"></script>
+<script src="js/online/firebase.js?v=3"></script>
+<script src="js/online/friends.js?v=3"></script>
+<script src="js/online/leaderboards.js?v=3"></script>
+<script src="js/main.js?v=3"></script>
 </body></html>

@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "id": 0,
+  "name": "Warm-up",
+  "song": "neon-drive",
+  "bpm": 90,
+  "beats": 44,
+  "subdivisions": [
+    1
+  ],
+  "density": 0,
+  "seed": 13,
+  "mechanics": {},
+  "notes": null
+}

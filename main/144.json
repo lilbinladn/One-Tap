@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "id": 143,
+  "name": "Marigold",
+  "song": "zero-hour",
+  "bpm": 216,
+  "beats": 60,
+  "subdivisions": [
+    4,
+    3,
+    4
+  ],
+  "density": 0.74,
+  "seed": 235470,
+  "mechanics": {
+    "x": 0.46399999999999997,
+    "d": 0.5,
+    "rb": 0.46399999999999997,
+    "tr": 0.46399999999999997,
+    "sc": 0.5
+  },
+  "notes": null
+}

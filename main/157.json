@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "id": 156,
+  "name": "Warhead",
+  "song": "velvet-static",
+  "bpm": 183,
+  "beats": 64,
+  "subdivisions": [
+    4,
+    2
+  ],
+  "density": 0.67,
+  "seed": 251102,
+  "mechanics": {
+    "x": 0.328,
+    "q": 1
+  },
+  "notes": null
+}

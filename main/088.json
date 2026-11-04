@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "id": 87,
+  "name": "Rampage",
+  "song": "supernova",
+  "bpm": 175,
+  "beats": 56,
+  "subdivisions": [
+    4,
+    3
+  ],
+  "density": 0.7,
+  "seed": 48863,
+  "mechanics": {
+    "ph": 0.35,
+    "x": 0.3,
+    "d": 0.4
+  },
+  "notes": null
+}

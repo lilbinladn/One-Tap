@@ -1,0 +1,52 @@
+/* Firebase: accounts and cloud saves.
+   Paste your Firebase web app config below (Firebase console > Project settings > Your apps > Web app).
+   These values identify your project; they are not secret. The Firestore rules are what keep each
+   player's data private. If the SDK can't load (offline, blocked, not configured) the game keeps
+   working from localStorage and window.fbInit is called with null. */
+(async () => {
+  const firebaseConfig = {
+    apiKey: "AIzaSyAtlvupuBuBymjyc0MwhKSCebOzgjgA-8Q",
+    authDomain: "one-tap-b0dd8.firebaseapp.com",
+    projectId: "one-tap-b0dd8",
+    storageBucket: "one-tap-b0dd8.firebasestorage.app",
+    messagingSenderId: "550909148993",
+    appId: "1:550909148993:web:9a268a5cb97e27c39a2bc0"
+  };
+  let FB = null;
+  try {
+    if (/PASTE/.test(firebaseConfig.apiKey)) throw new Error('Firebase config not filled in yet');
+    const B = 'https://www.gstatic.com/firebasejs/10.14.1/';
+    const [A, Au, Fs] = await Promise.all([import(B + 'firebase-app.js'), import(B + 'firebase-auth.js'), import(B + 'firebase-firestore.js')]);
+    const app = A.initializeApp(firebaseConfig), auth = Au.getAuth(app), db = Fs.getFirestore(app);
+    const col = uid => Fs.collection(db, 'users', uid, 'data');
+    const toD = sn => { const D = {}; sn.forEach(d => { const v = d.data(); if (v && typeof v.j === 'string') D[d.id] = { ts: v.ts || 0, j: v.j } }); return D };
+    FB = {
+      onAuth: cb => Au.onAuthStateChanged(auth, cb),
+      signIn: (e, p) => Au.signInWithEmailAndPassword(auth, e, p),
+      signUp: (e, p) => Au.createUserWithEmailAndPassword(auth, e, p),
+      cur: () => auth.currentUser,
+      delUser: () => Au.deleteUser(auth.currentUser),
+      setName: n => Au.updateProfile(auth.currentUser, { displayName: n }),
+      signOut: () => Au.signOut(auth),
+      reset: e => Au.sendPasswordResetEmail(auth, e),
+      // change password: Firebase needs the current password again first
+      changePw: async (cur, nw) => { const u = auth.currentUser; await Au.reauthenticateWithCredential(u, Au.EmailAuthProvider.credential(u.email, cur)); await Au.updatePassword(u, nw) },
+      getDocs: async uid => toD(await Fs.getDocs(col(uid))),
+      listen: (uid, cb, er) => Fs.onSnapshot(col(uid), sn => cb({ docs: toD(sn), fromCache: sn.metadata.fromCache, pending: sn.metadata.hasPendingWrites }), er),
+      setDoc: (uid, id, v) => Fs.setDoc(Fs.doc(db, 'users', uid, 'data', id), v),
+      delDoc: (uid, id) => Fs.deleteDoc(Fs.doc(db, 'users', uid, 'data', id)),
+      // community helpers: paths are arrays like ['community','acct_123']
+      cget: async p => { const s = await Fs.getDoc(Fs.doc(db, ...p)); return s.exists() ? s.data() : null },
+      cset: (p, v, merge) => Fs.setDoc(Fs.doc(db, ...p), v, merge ? { merge: true } : {}),
+      cdel: p => Fs.deleteDoc(Fs.doc(db, ...p)),
+      // top n documents of a collection, highest value of field f first (used by the leaderboards)
+      ctop: async (p, f, n) => (await Fs.getDocs(Fs.query(Fs.collection(db, ...p), Fs.orderBy(f, 'desc'), Fs.limit(n)))).docs.map(d => ({ id: d.id, d: d.data() })),
+      clist: async p => (await Fs.getDocs(Fs.collection(db, ...p))).docs.map(d => ({ id: d.id, d: d.data() })),
+      cfind: async (p, f, v) => (await Fs.getDocs(Fs.query(Fs.collection(db, ...p), Fs.where(f, '==', v)))).docs.map(d => ({ id: d.id, d: d.data() }))
+    };
+  } catch (e) {
+    console.warn('Accounts unavailable:', e.message);
+    FB = null;
+  }
+  window.fbInit && window.fbInit(FB);
+})();

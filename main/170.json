@@ -1,0 +1,34 @@
+{
+  "version": 2,
+  "id": 169,
+  "name": "Blitz",
+  "song": "chrome-hearts",
+  "bpm": 202,
+  "beats": 64,
+  "subdivisions": [
+    4,
+    2
+  ],
+  "density": 0.71,
+  "seed": 260872,
+  "mechanics": {
+    "s": 0.7,
+    "wp": 0.418,
+    "w": 1,
+    "t": [
+      [
+        16,
+        177
+      ],
+      [
+        32,
+        222
+      ],
+      [
+        48,
+        192
+      ]
+    ]
+  },
+  "notes": null
+}

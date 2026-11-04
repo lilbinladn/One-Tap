@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "id": 56,
+  "name": "Echo chamber",
+  "song": "midnight-circuit",
+  "bpm": 120,
+  "beats": 56,
+  "subdivisions": [
+    2
+  ],
+  "density": 0.55,
+  "seed": 120184,
+  "mechanics": {
+    "ph": 0.3,
+    "x": 0.2
+  },
+  "notes": null
+}

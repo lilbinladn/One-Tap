@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "id": 138,
+  "name": "Undertone",
+  "song": "crystal-rain",
+  "bpm": 212,
+  "beats": 60,
+  "subdivisions": [
+    4,
+    3
+  ],
+  "density": 0.74,
+  "seed": 233516,
+  "mechanics": {
+    "x": 0.45599999999999996,
+    "r": 4,
+    "sg": 0.5,
+    "rb": 0.45599999999999996
+  },
+  "notes": null
+}

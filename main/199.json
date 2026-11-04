@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "id": 198,
+  "name": "Event Zero",
+  "song": "iron-lullaby",
+  "bpm": 261,
+  "beats": 64,
+  "subdivisions": [
+    4,
+    3,
+    4
+  ],
+  "density": 0.83,
+  "seed": 291159,
+  "mechanics": {
+    "x": 0.492,
+    "ro": 0.492,
+    "r": 4,
+    "d": 0.5,
+    "rb": 0.492,
+    "s": 0.7
+  },
+  "notes": null
+}

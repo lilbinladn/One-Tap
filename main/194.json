@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "id": 193,
+  "name": "Armageddon",
+  "song": "glass-garden",
+  "bpm": 254,
+  "beats": 64,
+  "subdivisions": [
+    4,
+    3,
+    4
+  ],
+  "density": 0.82,
+  "seed": 287251,
+  "mechanics": {
+    "ro": 0.476,
+    "h": 0.376,
+    "sc": 0.5,
+    "sg": 0.5,
+    "r": 4,
+    "w": 1
+  },
+  "notes": null
+}

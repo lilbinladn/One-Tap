@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "id": 114,
+  "name": "Fever Dream",
+  "song": "pocket-galaxy",
+  "bpm": 172,
+  "beats": 60,
+  "subdivisions": [
+    4,
+    2
+  ],
+  "density": 0.64,
+  "seed": 209091,
+  "mechanics": {
+    "w": 1,
+    "ro": 0.356
+  },
+  "notes": null
+}

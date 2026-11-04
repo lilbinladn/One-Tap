@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "id": 144,
+  "name": "Nightjar",
+  "song": "abyssal-toll",
+  "bpm": 224,
+  "beats": 60,
+  "subdivisions": [
+    4,
+    3,
+    4
+  ],
+  "density": 0.76,
+  "seed": 240355,
+  "mechanics": {
+    "sg": 0.5,
+    "h": 0.384,
+    "ro": 0.484,
+    "x": 0.484,
+    "q": 1
+  },
+  "notes": null
+}

@@ -1,0 +1,36 @@
+{
+  "version": 2,
+  "id": 35,
+  "name": "Whiplash II",
+  "song": "sunset-relay",
+  "bpm": 150,
+  "beats": 44,
+  "subdivisions": [
+    4,
+    2
+  ],
+  "density": 0.65,
+  "seed": 21507,
+  "mechanics": {
+    "t": [
+      [
+        8,
+        200
+      ],
+      [
+        16,
+        120
+      ],
+      [
+        24,
+        190
+      ],
+      [
+        32,
+        130
+      ]
+    ],
+    "x": 0.25
+  },
+  "notes": null
+}

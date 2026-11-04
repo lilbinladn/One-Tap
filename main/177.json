@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "id": 176,
+  "name": "Anvil",
+  "song": "static-bloom",
+  "bpm": 221,
+  "beats": 64,
+  "subdivisions": [
+    4,
+    3
+  ],
+  "density": 0.75,
+  "seed": 270642,
+  "mechanics": {
+    "w": 1,
+    "x": 0.408,
+    "tr": 0.408,
+    "s": 0.7
+  },
+  "notes": null
+}

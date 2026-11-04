@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "id": 12,
+  "name": "Loose change",
+  "song": "static-bloom",
+  "bpm": 120,
+  "beats": 44,
+  "subdivisions": [
+    2,
+    3
+  ],
+  "density": 0.5,
+  "seed": 101621,
+  "mechanics": {
+    "h": 0.2,
+    "x": 0.2
+  },
+  "notes": null
+}

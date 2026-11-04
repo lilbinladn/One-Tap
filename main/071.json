@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "id": 70,
+  "name": "Orbit",
+  "song": "supernova",
+  "bpm": 140,
+  "beats": 56,
+  "subdivisions": [
+    4,
+    2
+  ],
+  "density": 0.6,
+  "seed": 125069,
+  "mechanics": {
+    "s": 0.5,
+    "r": 4
+  },
+  "notes": null
+}

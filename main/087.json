@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "id": 86,
+  "name": "Mirage",
+  "song": "crystal-rain",
+  "bpm": 180,
+  "beats": 56,
+  "subdivisions": [
+    4,
+    3
+  ],
+  "density": 0.7,
+  "seed": 50817,
+  "mechanics": {
+    "wp": 0.4,
+    "li": 0.3
+  },
+  "notes": null
+}

@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "id": 45,
+  "name": "Chaos theory",
+  "song": "zero-hour",
+  "bpm": 180,
+  "beats": 44,
+  "subdivisions": [
+    4
+  ],
+  "density": 0.75,
+  "seed": 25415,
+  "mechanics": {
+    "d": 0.5,
+    "x": 0.3,
+    "t": [
+      [
+        20,
+        150
+      ],
+      [
+        32,
+        200
+      ]
+    ]
+  },
+  "notes": null
+}

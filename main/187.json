@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "id": 186,
+  "name": "Juggernaut",
+  "song": "velvet-static",
+  "bpm": 240,
+  "beats": 64,
+  "subdivisions": [
+    4,
+    3
+  ],
+  "density": 0.79,
+  "seed": 280412,
+  "mechanics": {
+    "r": 4,
+    "wp": 0.498,
+    "sg": 0.498,
+    "w": 1,
+    "s": 0.7
+  },
+  "notes": null
+}

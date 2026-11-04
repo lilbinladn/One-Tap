@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "id": 88,
+  "name": "Machine gun",
+  "song": "midnight-circuit",
+  "bpm": 168,
+  "beats": 56,
+  "subdivisions": [
+    4
+  ],
+  "density": 0.65,
+  "seed": 129954,
+  "mechanics": {
+    "ro": 0.35,
+    "tr": 0.3
+  },
+  "notes": null
+}

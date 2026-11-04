@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "id": 184,
+  "name": "Stampede",
+  "song": "iron-lullaby",
+  "bpm": 233,
+  "beats": 64,
+  "subdivisions": [
+    4,
+    3
+  ],
+  "density": 0.77,
+  "seed": 276504,
+  "mechanics": {
+    "li": 0.432,
+    "d": 0.5,
+    "r": 4,
+    "wp": 0.482,
+    "ro": 0.432
+  },
+  "notes": null
+}

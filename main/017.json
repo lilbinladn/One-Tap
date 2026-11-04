@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "id": 16,
+  "name": "Gear shift",
+  "song": "static-bloom",
+  "bpm": 125,
+  "beats": 44,
+  "subdivisions": [
+    2,
+    4
+  ],
+  "density": 0.55,
+  "seed": 5875,
+  "mechanics": {
+    "t": [
+      [
+        16,
+        150
+      ],
+      [
+        32,
+        125
+      ]
+    ]
+  },
+  "notes": null
+}

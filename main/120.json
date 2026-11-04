@@ -1,0 +1,33 @@
+{
+  "version": 2,
+  "id": 119,
+  "name": "Snowglobe",
+  "song": "static-bloom",
+  "bpm": 177,
+  "beats": 60,
+  "subdivisions": [
+    4,
+    2
+  ],
+  "density": 0.65,
+  "seed": 212022,
+  "mechanics": {
+    "s": 0.7,
+    "x": 0.368,
+    "t": [
+      [
+        16,
+        152
+      ],
+      [
+        32,
+        197
+      ],
+      [
+        48,
+        167
+      ]
+    ]
+  },
+  "notes": null
+}

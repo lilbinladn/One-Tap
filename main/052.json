@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "id": 51,
+  "name": "Lightleak",
+  "song": "paper-lanterns",
+  "bpm": 105,
+  "beats": 56,
+  "subdivisions": [
+    1,
+    2
+  ],
+  "density": 0.45,
+  "seed": 117253,
+  "mechanics": {
+    "tr": 0.25
+  },
+  "notes": null
+}

@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "id": 129,
+  "name": "Umbra",
+  "song": "pocket-galaxy",
+  "bpm": 196,
+  "beats": 60,
+  "subdivisions": [
+    4,
+    3
+  ],
+  "density": 0.7,
+  "seed": 223746,
+  "mechanics": {
+    "sg": 0.46599999999999997,
+    "r": 4,
+    "wp": 0.46599999999999997
+  },
+  "notes": null
+}

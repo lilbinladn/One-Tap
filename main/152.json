@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "id": 151,
+  "name": "Skyhook",
+  "song": "neon-drive",
+  "bpm": 172,
+  "beats": 64,
+  "subdivisions": [
+    4,
+    2
+  ],
+  "density": 0.64,
+  "seed": 245240,
+  "mechanics": {
+    "d": 0.404,
+    "r": 4
+  },
+  "notes": null
+}

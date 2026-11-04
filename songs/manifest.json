@@ -1,0 +1,335 @@
+{
+  "version": 2,
+  "songs": [
+    {
+      "id": "neon-drive",
+      "name": "Neon Drive",
+      "root": 57,
+      "scale": [
+        0,
+        2,
+        3,
+        5,
+        7,
+        8,
+        10
+      ],
+      "chords": [
+        0,
+        5,
+        3,
+        6
+      ],
+      "lead": "sawtooth",
+      "drums": 0
+    },
+    {
+      "id": "glass-garden",
+      "name": "Glass Garden",
+      "root": 60,
+      "scale": [
+        0,
+        2,
+        4,
+        5,
+        7,
+        9,
+        11
+      ],
+      "chords": [
+        0,
+        4,
+        5,
+        3
+      ],
+      "lead": "triangle",
+      "drums": 1
+    },
+    {
+      "id": "static-bloom",
+      "name": "Static Bloom",
+      "root": 52,
+      "scale": [
+        0,
+        1,
+        3,
+        5,
+        7,
+        8,
+        10
+      ],
+      "chords": [
+        0,
+        1,
+        0,
+        6
+      ],
+      "lead": "square",
+      "drums": 2
+    },
+    {
+      "id": "sunset-relay",
+      "name": "Sunset Relay",
+      "root": 55,
+      "scale": [
+        0,
+        2,
+        4,
+        5,
+        7,
+        9,
+        10
+      ],
+      "chords": [
+        0,
+        6,
+        3,
+        0
+      ],
+      "lead": "triangle",
+      "drums": 1
+    },
+    {
+      "id": "overclock",
+      "name": "Overclock",
+      "root": 50,
+      "scale": [
+        0,
+        2,
+        3,
+        5,
+        7,
+        8,
+        11
+      ],
+      "chords": [
+        0,
+        5,
+        2,
+        4
+      ],
+      "lead": "sawtooth",
+      "drums": 2
+    },
+    {
+      "id": "zero-hour",
+      "name": "Zero Hour",
+      "root": 48,
+      "scale": [
+        0,
+        2,
+        3,
+        5,
+        7,
+        8,
+        10
+      ],
+      "chords": [
+        0,
+        3,
+        5,
+        4
+      ],
+      "lead": "square",
+      "drums": 0
+    },
+    {
+      "id": "crystal-rain",
+      "name": "Crystal Rain",
+      "root": 62,
+      "scale": [
+        0,
+        2,
+        4,
+        5,
+        7,
+        9,
+        11
+      ],
+      "chords": [
+        0,
+        5,
+        3,
+        4
+      ],
+      "lead": "triangle",
+      "drums": 1
+    },
+    {
+      "id": "chrome-hearts",
+      "name": "Chrome Hearts",
+      "root": 53,
+      "scale": [
+        0,
+        2,
+        3,
+        5,
+        7,
+        8,
+        10
+      ],
+      "chords": [
+        0,
+        2,
+        5,
+        3
+      ],
+      "lead": "square",
+      "drums": 0
+    },
+    {
+      "id": "midnight-circuit",
+      "name": "Midnight Circuit",
+      "root": 59,
+      "scale": [
+        0,
+        1,
+        3,
+        5,
+        7,
+        8,
+        10
+      ],
+      "chords": [
+        0,
+        6,
+        5,
+        6
+      ],
+      "lead": "sawtooth",
+      "drums": 2
+    },
+    {
+      "id": "supernova",
+      "name": "Supernova",
+      "root": 45,
+      "scale": [
+        0,
+        2,
+        3,
+        5,
+        7,
+        8,
+        11
+      ],
+      "chords": [
+        0,
+        5,
+        3,
+        4
+      ],
+      "lead": "sawtooth",
+      "drums": 0
+    },
+    {
+      "id": "abyssal-toll",
+      "name": "Abyssal Toll",
+      "root": 40,
+      "scale": [
+        0,
+        1,
+        3,
+        5,
+        6,
+        8,
+        10
+      ],
+      "chords": [
+        0,
+        1,
+        4,
+        1
+      ],
+      "lead": "sawtooth",
+      "drums": 3
+    },
+    {
+      "id": "pocket-galaxy",
+      "name": "Pocket Galaxy",
+      "root": 58,
+      "scale": [
+        0,
+        2,
+        4,
+        5,
+        7,
+        9,
+        10
+      ],
+      "chords": [
+        0,
+        3,
+        6,
+        4
+      ],
+      "lead": "triangle",
+      "drums": 1
+    },
+    {
+      "id": "velvet-static",
+      "name": "Velvet Static",
+      "root": 54,
+      "scale": [
+        0,
+        2,
+        3,
+        5,
+        7,
+        8,
+        10
+      ],
+      "chords": [
+        0,
+        6,
+        5,
+        3
+      ],
+      "lead": "sawtooth",
+      "drums": 0
+    },
+    {
+      "id": "paper-lanterns",
+      "name": "Paper Lanterns",
+      "root": 63,
+      "scale": [
+        0,
+        2,
+        4,
+        5,
+        7,
+        9,
+        11
+      ],
+      "chords": [
+        0,
+        2,
+        5,
+        4
+      ],
+      "lead": "triangle",
+      "drums": 2
+    },
+    {
+      "id": "iron-lullaby",
+      "name": "Iron Lullaby",
+      "root": 47,
+      "scale": [
+        0,
+        2,
+        3,
+        5,
+        7,
+        8,
+        11
+      ],
+      "chords": [
+        0,
+        3,
+        4,
+        0
+      ],
+      "lead": "square",
+      "drums": 3
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "version": 2,
+  "id": 179,
+  "name": "Surge",
+  "song": "pocket-galaxy",
+  "bpm": 216,
+  "beats": 64,
+  "subdivisions": [
+    4,
+    3
+  ],
+  "density": 0.74,
+  "seed": 267711,
+  "mechanics": {
+    "tr": 0.396,
+    "x": 0.396,
+    "li": 0.396,
+    "ro": 0.396,
+    "t": [
+      [
+        16,
+        191
+      ],
+      [
+        32,
+        236
+      ],
+      [
+        48,
+        206
+      ]
+    ]
+  },
+  "notes": null
+}

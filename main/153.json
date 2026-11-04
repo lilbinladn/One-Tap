@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "id": 152,
+  "name": "Redline",
+  "song": "chrome-hearts",
+  "bpm": 174,
+  "beats": 64,
+  "subdivisions": [
+    4,
+    2
+  ],
+  "density": 0.65,
+  "seed": 246217,
+  "mechanics": {
+    "r": 4,
+    "s": 0.7
+  },
+  "notes": null
+}

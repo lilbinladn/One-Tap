@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "id": 6,
+  "name": "Fake out",
+  "song": "sunset-relay",
+  "bpm": 100,
+  "beats": 44,
+  "subdivisions": [
+    2
+  ],
+  "density": 0.65,
+  "seed": 7829,
+  "mechanics": {
+    "d": 0.7
+  },
+  "notes": null
+}

@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "id": 90,
+  "name": "Cold open",
+  "song": "velvet-static",
+  "bpm": 180,
+  "beats": 56,
+  "subdivisions": [
+    4,
+    3
+  ],
+  "density": 0.72,
+  "seed": 132885,
+  "mechanics": {
+    "ro": 0.3,
+    "li": 0.3,
+    "wp": 0.3,
+    "ph": 0.3,
+    "d": 0.4
+  },
+  "notes": null
+}

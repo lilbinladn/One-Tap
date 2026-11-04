@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "id": 2,
+  "name": "Half-steps",
+  "song": "neon-drive",
+  "bpm": 100,
+  "beats": 44,
+  "subdivisions": [
+    1,
+    2
+  ],
+  "density": 0.35,
+  "seed": 990,
+  "mechanics": {},
+  "notes": null
+}

@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "id": 111,
+  "name": "Wisp",
+  "song": "overclock",
+  "bpm": 171,
+  "beats": 60,
+  "subdivisions": [
+    4,
+    2
+  ],
+  "density": 0.63,
+  "seed": 208114,
+  "mechanics": {
+    "s": 0.7,
+    "h": 0.252
+  },
+  "notes": null
+}

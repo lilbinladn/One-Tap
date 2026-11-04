@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "id": 140,
+  "name": "Dusk Chorus",
+  "song": "paper-lanterns",
+  "bpm": 214,
+  "beats": 60,
+  "subdivisions": [
+    4,
+    3,
+    4
+  ],
+  "density": 0.74,
+  "seed": 234493,
+  "mechanics": {
+    "r": 4,
+    "s": 0.7,
+    "q": 1,
+    "li": 0.45999999999999996,
+    "h": 0.36
+  },
+  "notes": null
+}

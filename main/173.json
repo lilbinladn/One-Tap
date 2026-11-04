@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "id": 172,
+  "name": "Whiplash III",
+  "song": "overclock",
+  "bpm": 214,
+  "beats": 64,
+  "subdivisions": [
+    4,
+    3
+  ],
+  "density": 0.73,
+  "seed": 266734,
+  "mechanics": {
+    "tr": 0.392,
+    "li": 0.392,
+    "x": 0.392,
+    "s": 0.7
+  },
+  "notes": null
+}

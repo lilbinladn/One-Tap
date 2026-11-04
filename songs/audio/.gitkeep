@@ -1,0 +1,1 @@
+Put song files here and point a song in songs/manifest.json at them with "url": "../songs/audio/<file>".

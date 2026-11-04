@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "id": 73,
+  "name": "Dizzy",
+  "song": "supernova",
+  "bpm": 145,
+  "beats": 56,
+  "subdivisions": [
+    4,
+    3
+  ],
+  "density": 0.6,
+  "seed": 40070,
+  "mechanics": {
+    "s": 0.7,
+    "h": 0.2
+  },
+  "notes": null
+}

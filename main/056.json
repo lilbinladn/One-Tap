@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "id": 55,
+  "name": "Drumroll",
+  "song": "chrome-hearts",
+  "bpm": 115,
+  "beats": 56,
+  "subdivisions": [
+    2
+  ],
+  "density": 0.6,
+  "seed": 32254,
+  "mechanics": {
+    "ro": 0.35,
+    "h": 0.2
+  },
+  "notes": null
+}

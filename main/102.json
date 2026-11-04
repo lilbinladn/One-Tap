@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "id": 101,
+  "name": "Sleepwalk",
+  "song": "static-bloom",
+  "bpm": 153,
+  "beats": 60,
+  "subdivisions": [
+    4,
+    2
+  ],
+  "density": 0.59,
+  "seed": 197367,
+  "mechanics": {
+    "sg": 0.35
+  },
+  "notes": null
+}

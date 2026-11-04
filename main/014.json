@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "id": 13,
+  "name": "Fade out",
+  "song": "zero-hour",
+  "bpm": 125,
+  "beats": 44,
+  "subdivisions": [
+    2,
+    4
+  ],
+  "density": 0.6,
+  "seed": 13691,
+  "mechanics": {},
+  "notes": null
+}

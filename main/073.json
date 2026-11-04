@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "id": 72,
+  "name": "Squeeze play",
+  "song": "supernova",
+  "bpm": 150,
+  "beats": 56,
+  "subdivisions": [
+    4,
+    2
+  ],
+  "density": 0.6,
+  "seed": 42024,
+  "mechanics": {
+    "q": 1,
+    "tr": 0.25
+  },
+  "notes": null
+}

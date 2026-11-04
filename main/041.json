@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "id": 40,
+  "name": "Seeing double",
+  "song": "overclock",
+  "bpm": 170,
+  "beats": 44,
+  "subdivisions": [
+    4
+  ],
+  "density": 0.7,
+  "seed": 23461,
+  "mechanics": {
+    "x": 0.35
+  },
+  "notes": null
+}

@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "id": 7,
+  "name": "Hold on",
+  "song": "glass-garden",
+  "bpm": 110,
+  "beats": 44,
+  "subdivisions": [
+    2
+  ],
+  "density": 0.6,
+  "seed": 2944,
+  "mechanics": {
+    "h": 0.25
+  },
+  "notes": null
+}

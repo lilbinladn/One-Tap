@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "id": 79,
+  "name": "Carousel",
+  "song": "chrome-hearts",
+  "bpm": 160,
+  "beats": 56,
+  "subdivisions": [
+    4,
+    3
+  ],
+  "density": 0.65,
+  "seed": 45932,
+  "mechanics": {
+    "s": 0.8,
+    "wp": 0.3,
+    "w": 1
+  },
+  "notes": null
+}

@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "id": 11,
+  "name": "Rubber band",
+  "song": "iron-lullaby",
+  "bpm": 110,
+  "beats": 44,
+  "subdivisions": [
+    2,
+    4
+  ],
+  "density": 0.5,
+  "seed": 102598,
+  "mechanics": {
+    "x": 0.3
+  },
+  "notes": null
+}

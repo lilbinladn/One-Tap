@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "id": 170,
+  "name": "Highwire",
+  "song": "paper-lanterns",
+  "bpm": 208,
+  "beats": 64,
+  "subdivisions": [
+    4,
+    3
+  ],
+  "density": 0.72,
+  "seed": 263803,
+  "mechanics": {
+    "q": 1,
+    "li": 0.38,
+    "r": 4,
+    "w": 1
+  },
+  "notes": null
+}

@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "id": 108,
+  "name": "Somnia",
+  "song": "iron-lullaby",
+  "bpm": 163,
+  "beats": 60,
+  "subdivisions": [
+    4,
+    2
+  ],
+  "density": 0.61,
+  "seed": 203229,
+  "mechanics": {
+    "tr": 0.33199999999999996
+  },
+  "notes": null
+}

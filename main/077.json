@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "id": 76,
+  "name": "Comet tail",
+  "song": "pocket-galaxy",
+  "bpm": 148,
+  "beats": 56,
+  "subdivisions": [
+    4,
+    2
+  ],
+  "density": 0.62,
+  "seed": 126046,
+  "mechanics": {
+    "tr": 0.3,
+    "wp": 0.3,
+    "t": [
+      [
+        16,
+        120
+      ],
+      [
+        32,
+        170
+      ]
+    ]
+  },
+  "notes": null
+}

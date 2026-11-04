@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "id": 10,
+  "name": "Triplet town",
+  "song": "static-bloom",
+  "bpm": 120,
+  "beats": 44,
+  "subdivisions": [
+    3,
+    2
+  ],
+  "density": 0.6,
+  "seed": 4898,
+  "mechanics": {},
+  "notes": null
+}

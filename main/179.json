@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "id": 178,
+  "name": "Jetstream",
+  "song": "supernova",
+  "bpm": 223,
+  "beats": 64,
+  "subdivisions": [
+    4,
+    3
+  ],
+  "density": 0.75,
+  "seed": 271619,
+  "mechanics": {
+    "wp": 0.46199999999999997,
+    "rb": 0.412,
+    "r": 4,
+    "tr": 0.412
+  },
+  "notes": null
+}

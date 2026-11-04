@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "id": 164,
+  "name": "Hyperdrive",
+  "song": "glass-garden",
+  "bpm": 197,
+  "beats": 64,
+  "subdivisions": [
+    4,
+    2
+  ],
+  "density": 0.7,
+  "seed": 257941,
+  "mechanics": {
+    "tr": 0.356,
+    "ro": 0.356,
+    "li": 0.356
+  },
+  "notes": null
+}

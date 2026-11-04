@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "id": 185,
+  "name": "Terminal",
+  "song": "zero-hour",
+  "bpm": 238,
+  "beats": 64,
+  "subdivisions": [
+    4,
+    3
+  ],
+  "density": 0.78,
+  "seed": 279435,
+  "mechanics": {
+    "s": 0.7,
+    "tr": 0.444,
+    "wp": 0.494,
+    "w": 1,
+    "q": 1
+  },
+  "notes": null
+}

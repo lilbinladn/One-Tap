@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "id": 103,
+  "name": "Haze",
+  "song": "glass-garden",
+  "bpm": 156,
+  "beats": 60,
+  "subdivisions": [
+    4,
+    2
+  ],
+  "density": 0.6,
+  "seed": 199321,
+  "mechanics": {
+    "sc": 0.6
+  },
+  "notes": null
+}

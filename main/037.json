@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "id": 36,
+  "name": "Ping-pong",
+  "song": "overclock",
+  "bpm": 160,
+  "beats": 44,
+  "subdivisions": [
+    4,
+    3
+  ],
+  "density": 0.7,
+  "seed": 22484,
+  "mechanics": {
+    "r": 2,
+    "d": 0.4
+  },
+  "notes": null
+}

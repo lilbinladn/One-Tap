@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "id": 32,
+  "name": "Trapdoor",
+  "song": "iron-lullaby",
+  "bpm": 165,
+  "beats": 44,
+  "subdivisions": [
+    4,
+    2
+  ],
+  "density": 0.65,
+  "seed": 110414,
+  "mechanics": {
+    "d": 0.5,
+    "h": 0.2
+  },
+  "notes": null
+}

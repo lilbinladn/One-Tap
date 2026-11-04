@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "id": 15,
+  "name": "Back and forth",
+  "song": "overclock",
+  "bpm": 120,
+  "beats": 44,
+  "subdivisions": [
+    4,
+    2
+  ],
+  "density": 0.55,
+  "seed": 10760,
+  "mechanics": {
+    "r": 4,
+    "h": 0.2
+  },
+  "notes": null
+}

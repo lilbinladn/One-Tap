@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "id": 174,
+  "name": "Ricochet",
+  "song": "velvet-static",
+  "bpm": 212,
+  "beats": 64,
+  "subdivisions": [
+    4,
+    3
+  ],
+  "density": 0.73,
+  "seed": 265757,
+  "mechanics": {
+    "tr": 0.388,
+    "r": 4,
+    "ro": 0.388,
+    "x": 0.388
+  },
+  "notes": null
+}

@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "id": 133,
+  "name": "Halcyon",
+  "song": "chrome-hearts",
+  "bpm": 209,
+  "beats": 60,
+  "subdivisions": [
+    4,
+    3
+  ],
+  "density": 0.73,
+  "seed": 231562,
+  "mechanics": {
+    "d": 0.5,
+    "li": 0.44799999999999995,
+    "h": 0.348,
+    "sg": 0.498
+  },
+  "notes": null
+}

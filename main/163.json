@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "id": 162,
+  "name": "Razorback",
+  "song": "midnight-circuit",
+  "bpm": 199,
+  "beats": 64,
+  "subdivisions": [
+    4,
+    2
+  ],
+  "density": 0.7,
+  "seed": 258918,
+  "mechanics": {
+    "rb": 0.36,
+    "w": 1,
+    "sc": 0.5
+  },
+  "notes": null
+}

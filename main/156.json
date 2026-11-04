@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "id": 155,
+  "name": "Vortex",
+  "song": "crystal-rain",
+  "bpm": 178,
+  "beats": 64,
+  "subdivisions": [
+    4,
+    2
+  ],
+  "density": 0.66,
+  "seed": 248171,
+  "mechanics": {
+    "d": 0.41600000000000004,
+    "tr": 0.316
+  },
+  "notes": null
+}

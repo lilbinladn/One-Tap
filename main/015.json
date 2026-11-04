@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "id": 14,
+  "name": "Hairpin",
+  "song": "neon-drive",
+  "bpm": 125,
+  "beats": 44,
+  "subdivisions": [
+    2,
+    4
+  ],
+  "density": 0.5,
+  "seed": 103575,
+  "mechanics": {
+    "r": 8,
+    "h": 0.15
+  },
+  "notes": null
+}

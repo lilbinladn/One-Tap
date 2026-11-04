@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "id": 25,
+  "name": "Ricochet",
+  "song": "zero-hour",
+  "bpm": 150,
+  "beats": 44,
+  "subdivisions": [
+    4,
+    2
+  ],
+  "density": 0.6,
+  "seed": 12714,
+  "mechanics": {
+    "x": 0.3,
+    "h": 0.2
+  },
+  "notes": null
+}

@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "id": 175,
+  "name": "Firebrand",
+  "song": "abyssal-toll",
+  "bpm": 219,
+  "beats": 64,
+  "subdivisions": [
+    4,
+    3
+  ],
+  "density": 0.74,
+  "seed": 269665,
+  "mechanics": {
+    "tr": 0.404,
+    "d": 0.5,
+    "q": 1,
+    "ro": 0.404
+  },
+  "notes": null
+}

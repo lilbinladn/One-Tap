@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "id": 197,
+  "name": "Zenith",
+  "song": "crystal-rain",
+  "bpm": 263,
+  "beats": 64,
+  "subdivisions": [
+    4,
+    3,
+    4
+  ],
+  "density": 0.84,
+  "seed": 292136,
+  "mechanics": {
+    "s": 0.7,
+    "wp": 0.5,
+    "r": 4,
+    "sc": 0.5,
+    "x": 0.496,
+    "h": 0.396
+  },
+  "notes": null
+}

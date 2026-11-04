@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "id": 66,
+  "name": "Slipstream",
+  "song": "crystal-rain",
+  "bpm": 130,
+  "beats": 56,
+  "subdivisions": [
+    4,
+    2
+  ],
+  "density": 0.55,
+  "seed": 122138,
+  "mechanics": {
+    "tr": 0.3,
+    "wp": 0.3
+  },
+  "notes": null
+}

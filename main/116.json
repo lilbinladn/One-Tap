@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "id": 115,
+  "name": "Paper Moon",
+  "song": "glass-garden",
+  "bpm": 180,
+  "beats": 60,
+  "subdivisions": [
+    4,
+    2
+  ],
+  "density": 0.66,
+  "seed": 213976,
+  "mechanics": {
+    "h": 0.276,
+    "d": 0.47600000000000003
+  },
+  "notes": null
+}

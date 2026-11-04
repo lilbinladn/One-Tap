@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "id": 112,
+  "name": "Half Light",
+  "song": "velvet-static",
+  "bpm": 169,
+  "beats": 60,
+  "subdivisions": [
+    4,
+    2
+  ],
+  "density": 0.63,
+  "seed": 207137,
+  "mechanics": {
+    "s": 0.7,
+    "sg": 0.39799999999999996
+  },
+  "notes": null
+}

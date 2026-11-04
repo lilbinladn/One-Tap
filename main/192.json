@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "id": 191,
+  "name": "Nemesis",
+  "song": "supernova",
+  "bpm": 252,
+  "beats": 64,
+  "subdivisions": [
+    4,
+    3,
+    4
+  ],
+  "density": 0.81,
+  "seed": 286274,
+  "mechanics": {
+    "wp": 0.5,
+    "ro": 0.472,
+    "sg": 0.5,
+    "q": 1,
+    "w": 1,
+    "sc": 0.5
+  },
+  "notes": null
+}

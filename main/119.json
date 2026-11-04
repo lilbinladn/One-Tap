@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "id": 118,
+  "name": "Hush",
+  "song": "supernova",
+  "bpm": 179,
+  "beats": 60,
+  "subdivisions": [
+    4,
+    2
+  ],
+  "density": 0.65,
+  "seed": 212999,
+  "mechanics": {
+    "rb": 0.372,
+    "tr": 0.372
+  },
+  "notes": null
+}

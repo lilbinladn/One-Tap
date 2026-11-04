@@ -1,0 +1,34 @@
+{
+  "version": 2,
+  "id": 166,
+  "name": "Ironclad",
+  "song": "sunset-relay",
+  "bpm": 189,
+  "beats": 64,
+  "subdivisions": [
+    4,
+    2
+  ],
+  "density": 0.68,
+  "seed": 254033,
+  "mechanics": {
+    "wp": 0.38999999999999996,
+    "s": 0.7,
+    "ro": 0.33999999999999997,
+    "t": [
+      [
+        16,
+        164
+      ],
+      [
+        32,
+        209
+      ],
+      [
+        48,
+        179
+      ]
+    ]
+  },
+  "notes": null
+}

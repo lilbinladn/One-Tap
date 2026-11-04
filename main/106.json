@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "id": 105,
+  "name": "Nocturne",
+  "song": "neon-drive",
+  "bpm": 160,
+  "beats": 60,
+  "subdivisions": [
+    4,
+    2
+  ],
+  "density": 0.6,
+  "seed": 201275,
+  "mechanics": {
+    "h": 0.224
+  },
+  "notes": null
+}

@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "id": 65,
+  "name": "Lift off",
+  "song": "chrome-hearts",
+  "bpm": 130,
+  "beats": 56,
+  "subdivisions": [
+    4,
+    2
+  ],
+  "density": 0.55,
+  "seed": 34208,
+  "mechanics": {
+    "li": 0.3,
+    "x": 0.25
+  },
+  "notes": null
+}

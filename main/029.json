@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "id": 28,
+  "name": "Switchback",
+  "song": "overclock",
+  "bpm": 150,
+  "beats": 44,
+  "subdivisions": [
+    2,
+    4
+  ],
+  "density": 0.6,
+  "seed": 107483,
+  "mechanics": {
+    "r": 4,
+    "t": [
+      [
+        12,
+        120
+      ],
+      [
+        28,
+        160
+      ]
+    ]
+  },
+  "notes": null
+}

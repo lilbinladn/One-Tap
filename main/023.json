@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "id": 22,
+  "name": "Don’t bite",
+  "song": "sunset-relay",
+  "bpm": 135,
+  "beats": 44,
+  "subdivisions": [
+    3,
+    4
+  ],
+  "density": 0.6,
+  "seed": 8806,
+  "mechanics": {
+    "d": 0.5
+  },
+  "notes": null
+}

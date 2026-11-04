@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "id": 110,
+  "name": "Slow Bloom",
+  "song": "zero-hour",
+  "bpm": 168,
+  "beats": 60,
+  "subdivisions": [
+    4,
+    2
+  ],
+  "density": 0.62,
+  "seed": 206160,
+  "mechanics": {
+    "h": 0.244,
+    "rb": 0.344
+  },
+  "notes": null
+}
