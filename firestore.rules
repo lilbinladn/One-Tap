@@ -31,7 +31,8 @@ service cloud.firestore {
       allow get: if signedIn()
         && doc.matches('c_.*')
         && ( exists(/databases/$(database)/documents/community/$('acct_' + uid))
-          || exists(/databases/$(database)/documents/community/$('lvl_' + uid + '_' + doc)) );
+          || exists(/databases/$(database)/documents/community/$('lvl_' + uid + '_' + doc))
+          || exists(/databases/$(database)/documents/published/$(uid + '_' + doc)) );
     }
 
     // NEW: one document per username. It can be created once and never changed or removed,
@@ -115,10 +116,27 @@ service cloud.firestore {
       allow delete: if signedIn() && (request.auth.uid == uid || request.auth.uid == other);
     }
 
-    // What shows up in the community tab. Head account and curators only.
+    // What shows up in the featured half of the community tab. Head account and curators only.
     match /community/{id} {
       allow read: if signedIn();
       allow create, update, delete: if canCurate();
+    }
+
+    // NEW: unranked levels their creators published themselves (Community -> All levels).
+    // One small metadata document per level, id <uid>_<key>, next to the level data that stays in
+    // users/<uid>/data/<key>. Only the creator writes it, so only levels the creator verifies on
+    // their own device end up here; curators can remove anything from the list.
+    match /published/{id} {
+      allow read: if signedIn();
+      allow create, update: if signedIn()
+        && request.resource.data.keys().hasOnly(['uid', 'key', 'name', 'owner', 'bpm', 'm', 'a', 'vt', 'ts'])
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.key is string
+        && id == request.auth.uid + '_' + request.resource.data.key
+        && request.resource.data.name is string
+        && request.resource.data.owner is string
+        && request.resource.data.vt is number;
+      allow delete: if signedIn() && (resource.data.uid == request.auth.uid || canCurate());
     }
 
     // Who the curators are. Only the head account can change this.

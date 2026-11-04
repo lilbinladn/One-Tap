@@ -185,7 +185,7 @@ function menu(){keep();if(ED&&ED.play)edStop(true);cancelAnimationFrame(edRaf);s
  <p>${am.length?am.map(m=>'<b>'+m[1]+'</b>: '+m[2]).join('<br>'):'Optional rules that give bonus score. Faster speeds count too.'}</p>
  <div class="toggles"><button class="tg ${save.sc?'on':''}" data-a="sc" data-v="${save.sc?0:1}" title="Show a short preview of the chart before the level starts"><span>Showcase first</span><b>${save.sc?'On':'Off'}</b></button><button class="tg ${save.pr?'on':''}" data-a="pr" data-v="${save.pr?0:1}" title="Ask where to start when you pick a level"><span>Practice start point</span><b>${save.pr?'On':'Off'}</b></button></div>
  <p class="hint">Tap with Space, any key, mouse or touch. You can press a new input while another is held, so every key, mouse button and finger counts on its own. R retries, Esc returns here.</p></div>
- <div class="listwrap"><div class="listhead"><div class="row">${seg('on',['Campaign','Online'],save.on?1:0)}</div><p class="hint">${save.on?'Levels picked by the community team.':'Levels in every area run from easiest to hardest.'}</p></div><div class="list" id="onl">${save.on?onlHTML():`<h2>Area 1: Downbeat · ${A1} levels · ${srng(0,A1)}</h2>${rg(0,A1)}<h2>Area 2: Afterglow · 50 levels · ${srng(A1,100)}</h2>${rg(A1,100)}<h2>Area 3: Dreamstate · 50 levels · ${srng(100,150)}</h2>${rg(100,150)}<h2>Area 4: Zenith · 50 levels · ${srng(150,NL)}</h2>${rg(150,NL)}${save.sec?'<h2 style="color:#ff1a1a">Something is waiting</h2>'+cd(SEC):''}<h2>Custom levels · ${save.custom.length}</h2>${save.custom.map(ccd).join('')||'<p>Nothing here yet. Open the level editor to chart your own, or import a .otm level someone sent you.</p>'}<div class="row" style="margin:8px 0"><button class="main" data-a="cnew">+ New level</button><button data-a="cimp">Import level…</button></div><p class="hint">Share a level with the Share button. It saves a small .otm file. Import one here or drop it anywhere on this screen.</p>`}</div></div></div>`;
+ <div class="listwrap"><div class="listhead"><div class="row">${seg('on',['Campaign','Community'],save.on?1:0)}</div><p class="hint">${save.on?'Featured picks and levels published by players.':'Levels in every area run from easiest to hardest.'}</p></div><div class="list" id="onl">${save.on?onlHTML():`<h2>Area 1: Downbeat · ${A1} levels · ${srng(0,A1)}</h2>${rg(0,A1)}<h2>Area 2: Afterglow · 50 levels · ${srng(A1,100)}</h2>${rg(A1,100)}<h2>Area 3: Dreamstate · 50 levels · ${srng(100,150)}</h2>${rg(100,150)}<h2>Area 4: Zenith · 50 levels · ${srng(150,NL)}</h2>${rg(150,NL)}${save.sec?'<h2 style="color:#ff1a1a">Something is waiting</h2>'+cd(SEC):''}<h2>Custom levels · ${save.custom.length}</h2>${save.custom.map(ccd).join('')||'<p>Nothing here yet. Open the level editor to chart your own, or import a .otm level someone sent you.</p>'}<div class="row" style="margin:8px 0"><button class="main" data-a="cnew">+ New level</button><button data-a="cimp">Import level…</button></div><p class="hint">Share a level with the Share button. It saves a small .otm file. Import one here or drop it anywhere on this screen.</p>`}</div></div></div>`;
  const s2=$('.side'),l2=$('.list');if(s2&&l2){s2.scrollTop=ms.s;l2.scrollTop=ms.l;ui.scrollTop=ms.u}
  if(save.on){CM.k=onlKey();if(cmOK()&&!CM.loaded&&!CM.busy)cmLoad()}
  $('#spd').oninput=e=>{save.spd=Math.round(+e.target.value)/100;$('#spv').textContent=e.target.value};$('#spd').onchange=()=>{persist();menu()}}
@@ -288,18 +288,19 @@ function end(win){ui.style.touchAction='';if(SH){state='end';master.gain.setTarg
   ui.innerHTML=`<div class="p"><p class="big" style="color:var(--hot)">${bs}</p><h1 style="font-size:24px">beats survived</h1>${nb?'<div class="nb">★ NEW BEST ★'+(old?'<br>Previous best: '+old:'')+'</div>':''}<p>${Math.round(pts).toLocaleString()} pts · best ${save.endBest} beats${rate>=1?'':' (slowed, not ranked)'}</p><div class="row"><button class="main" data-a="retry">Again</button><button data-a="menu">Menu</button></div></div>`;return}
  state='end';master.gain.setTargetAtTime(0,ac.currentTime,.05);fadeKill();
  const tot=notes.filter(o=>!o.decoy).length,acc=Math.round((st.P+.7*st.G)/tot*100),pc=win&&brk==0,g=pc&&st.G==0&&acc>=97?'SSS':pc&&acc>=97?'SS':gAcc(acc),sc=Math.round(pts),ranked=rate>=1&&!mo.nf,ml=modLabel();
- let nbm=[];
+ let nbm=[],nvd='';
  if(win&&lv!=CUS){if(lv==NL-1)save.sec=1;save.unlocked=Math.max(save.unlocked,Math.min(NL,lv+2));
   if(ranked&&!PS){const b=save.best[lv],nw={s:Math.max(b?b.s:0,sc),a:Math.max(b?b.a:0,acc),c:Math.max(b&&b.c||0,maxc),d:b&&b.s>=sc?b.d:save.diff,m:b&&b.s>=sc?b.m||'':ml,f:(b&&b.f)||(brk==0?1:0)};nw.g=GR[Math.max(GR.indexOf(gAcc(nw.a)),GR.indexOf(b&&b.g||'D'),GR.indexOf(g))];if(GR.indexOf(g)>=5&&GR.indexOf(g)>GR.indexOf(b&&b.g||'D'))nbm.push('New rank: '+g);
    if(!b)nbm.push('First clear!');else{if(sc>b.s)nbm.push('Score +'+(sc-b.s).toLocaleString());if(acc>b.a)nbm.push('Accuracy '+b.a+'% → '+acc+'%');if(b.c&&maxc>b.c)nbm.push('Combo '+b.c+' → '+maxc)}
    save.best[lv]=nw;save.runs.push({l:lv,d:save.diff,s:sc,a:acc,g,m:ml});save.runs.sort((p,q)=>q.s-p.s);save.runs=save.runs.slice(0,10)}persist()}
+ if(win&&lv==CUS&&CL&&!PS&&!mo.nf&&!verified(CL)){CL.vt=Date.now();CL.vh=vhash(CL);persist();nvd='✓ Level verified · you can publish it now'}
  checkAch({win,lv,g,acc,maxc,rate,diff:save.diff,mo:Object.assign({},mo),pr:!!PS,ranked,custom:lv==CUS});
  ui.innerHTML=`<div class="p"><p class="big${win&&g.length>1?' g'+g.length:''}" style="color:${win?'var(--ok)':'var(--hot)'}">${win?g:'Failed'}</p>
- <h1 style="font-size:24px">${win?(lv==CUS?'Custom level':'Level '+(lv+1))+' cleared':(why||'Health ran out')}</h1>${nbm.length?'<div class="nb">★ NEW BEST ★<br>'+nbm.join(' · ')+'</div>':''}
+ <h1 style="font-size:24px">${win?(lv==CUS?'Custom level':'Level '+(lv+1))+' cleared':(why||'Health ran out')}</h1>${nbm.length?'<div class="nb">★ NEW BEST ★<br>'+nbm.join(' · ')+'</div>':''}${nvd?'<div class="nb" style="color:var(--ok)">'+nvd+'</div>':''}
  <p>${mo.nf?'No score (No Fail)':sc.toLocaleString()+' pts'} on ${DN[save.diff]}${ml?' + '+ml:''}${PS?' (practice, not ranked)':mo.nf?' (not ranked)':ranked?'':' (slowed, not ranked)'}<br>${st.P} perfect, ${st.G} good, ${st.M} missed, ${st.S} stray taps · ${acc}% · best combo ${maxc}</p>
- <div class="row"><button class="main" data-a="retry">Retry</button>${win&&lv<NL-1?'<button data-a="next">Next level</button>':''}${lv==CUS&&EDI!=null?'<button data-a="e_back">Back to editor</button>':''}<button data-a="replay">Showcase</button><button data-a="menu">Levels</button><button data-a="rank">Rankings</button></div></div>`}
+ <div class="row"><button class="main" data-a="retry">Retry</button>${win&&lv<NL-1?'<button data-a="next">Next level</button>':''}${lv==CUS&&EDI!=null&&verified(CL)?`<button data-a="cpub" data-v="${EDI}">${CL.pub?'Published':'Publish'}</button>`:''}${lv==CUS&&EDI!=null?'<button data-a="e_back">Back to editor</button>':''}<button data-a="replay">Showcase</button><button data-a="menu">Levels</button><button data-a="rank">Rankings</button></div></div>`}
 ui.onclick=e=>{const b=e.target.closest('button');if(!b)return;b.blur();keep();const a=b.dataset.a,v=+b.dataset.v;
- if(a&&a.startsWith('cal_')){calAct(a);return}if(a&&a.startsWith('e_'))edAct(a,b);else if(a&&a.startsWith('cm_'))commAct(a,b);else if(a&&(a.startsWith('fr_')||a.startsWith('lb_')))socAct(a,b);else if(a=='ach')achScreen();else if(a=='cimp')importPick();else if(a=='cshr')shareLevel(v);else if(a=='na_pick')naPick();else if(a=='na_bk'){const n=NA;NA=null;if(n)playCustom(n.i,n.show,n.from,n.fromEd,1)}else if(a=='cnew')editor(-1);else if(a=='ced')editor(v);else if(a=='clv')playCustom(v,save.sc);else if(a=='cdel')cdel(v);else if(a=='lv'){if(save.pr)prac(v);else start(v,save.sc)}else if(a=='set')settings();else if(a=='test')pvw();else if(a=='snd'){save.st.snd=v;persist();settings();pvw()}else if(a=='hot'||a=='ring'){save.st[a]=v<0?'':CP[v];persist();settings()}else if(a=='theme'){save.st.theme=['auto','light','dark'][v];persist();applyTheme();settings()}else if(a=='fx'){save.st.fx=v;persist();settings()}else if(a=='ar'){save.st.ar=v;persist();settings()}else if(a=='tt'){save.st.tt=v;persist();settings()}else if(a=='fps'){save.st.fps=v;persist();settings()}else if(a=='syn'){save.st.syn=[1,2,3,5][v]||2;persist();settings()}else if(a=='pr'){save.pr=!!v;persist();menu()}else if(a=='endless')start(END);else if(a=='pgo')start(v,save.sc,+$('#pb').value);else if(a=='sc'){save.sc=!!v;persist();menu()}else if(a=='playit')start(lv,false,PS);else if(a=='replay')start(lv,true,PS);else if(a=='diff'){save.diff=v;persist();menu()}else if(a=='slow'){save.slow=v;persist();menu()}else if(a=='on'){save.on=!!v;persist();menu()}
+ if(a&&a.startsWith('cal_')){calAct(a);return}if(a&&a.startsWith('e_'))edAct(a,b);else if(a&&a.startsWith('cm_'))commAct(a,b);else if(a&&(a.startsWith('fr_')||a.startsWith('lb_')))socAct(a,b);else if(a=='ach')achScreen();else if(a=='cimp')importPick();else if(a=='cshr')shareLevel(v);else if(a=='na_pick')naPick();else if(a=='na_bk'){const n=NA;NA=null;if(n)playCustom(n.i,n.show,n.from,n.fromEd,1)}else if(a=='cnew')editor(-1);else if(a=='ced')editor(v);else if(a=='clv')playCustom(v,save.sc);else if(a=='cpub')cmPubAct(v);else if(a=='cdel')cdel(v);else if(a=='lv'){if(save.pr)prac(v);else start(v,save.sc)}else if(a=='set')settings();else if(a=='test')pvw();else if(a=='snd'){save.st.snd=v;persist();settings();pvw()}else if(a=='hot'||a=='ring'){save.st[a]=v<0?'':CP[v];persist();settings()}else if(a=='theme'){save.st.theme=['auto','light','dark'][v];persist();applyTheme();settings()}else if(a=='fx'){save.st.fx=v;persist();settings()}else if(a=='ar'){save.st.ar=v;persist();settings()}else if(a=='tt'){save.st.tt=v;persist();settings()}else if(a=='fps'){save.st.fps=v;persist();settings()}else if(a=='syn'){save.st.syn=[1,2,3,5][v]||2;persist();settings()}else if(a=='pr'){save.pr=!!v;persist();menu()}else if(a=='endless')start(END);else if(a=='pgo')start(v,save.sc,+$('#pb').value);else if(a=='sc'){save.sc=!!v;persist();menu()}else if(a=='playit')start(lv,false,PS);else if(a=='replay')start(lv,true,PS);else if(a=='diff'){save.diff=v;persist();menu()}else if(a=='slow'){save.slow=v;persist();menu()}else if(a=='on'){save.on=!!v;persist();menu()}
  else if(a=='mod'){{const k=b.dataset.k,M=save.mods;M[k]=M[k]?0:1;if(M[k]){if(k=='nf'){M.fc=0;M.ap=0}else if(k=='fc'||k=='ap')M.nf=0;if(k=='ez')M.fr=0;if(k=='fr')M.ez=0}persist();menu()}}else if(a=='rank')rankings();else if(a=='menu')menu();else if(a=='retry')start(lv,false,PS);else if(a=='next')start(lv+1);else if(a=='acct')acctScreen();else if(a=='a_login')doAuth(false);else if(a=='a_reg')doAuth(true);else if(a=='a_mode')acctScreen(v?'up':'in');else if(a=='a_uname')nameScreen();else if(a=='a_nameok')doName();else if(a=='a_out')logout();else if(a=='a_pw')pwScreen();else if(a=='a_pwok')doPw();else if(a=='a_reset')doReset();else if(a=='sync')syncNow();else if(a=='p_resume')resumeGame();else if(a=='p_retry')pauseRetry();else if(a=='p_quit')pauseQuit();else if(a=='p_tt'){save.st.tt=save.st.tt===0?1:0;persist();showPause()}};
 // Input: every key, mouse button and finger is tracked on its own, so a new input counts while another is still held.
 const dn=new Set();let lastT=0;
@@ -340,7 +341,7 @@ async function playCustom(i,show,from,fromEd,noAud){const c=save.custom[i];if(!c
  if(c.audio&&!noAud){try{CAB=await loadAudio(c)}catch(e){return needAudio(i,show,from,fromEd)}}
  const f={};if(c.fl.r)f.r=c.fl.r;if(c.fl.w)f.w=1;if(c.fl.s)f.s=c.fl.s;if(c.fl.q)f.q=1;if(c.notes.some(o=>o.t=='scl'||o.t=='scr'))f.sc=1;if(c.notes.some(o=>o.t=='rb'))f.rb=1;if(c.notes.some(o=>o.t=='sg'))f.sg=1;
  L[CUS]=[c.si,c.bpm,[1],0,f,c.name,9999];start(CUS,show,from)}
-function ccd(c,i){return `<div class="crow"><button class="card" data-a="clv" data-v="${i}"${c.notes.length?'':' disabled'} style="border-left-color:var(--ok)"><b>★</b><span>${esc(c.name)}<i>${c.audioName?esc(c.audioName):'Built-in backing'} · ${c.bpm} BPM · ${c.notes.length} notes${c.by?' · by '+esc(c.by):''}</i></span>${cbadge(c)}</button><button data-a="ced" data-v="${i}">Edit</button><button data-a="cshr" data-v="${i}" title="Save as a .otm level file you can send to anyone">Share</button><button data-a="cdel" data-v="${i}">${delArm===i?'Sure?':'✕'}</button></div>`}
+function ccd(c,i){const v=verified(c);return `<div class="crow"><button class="card" data-a="clv" data-v="${i}"${c.notes.length?'':' disabled'} style="border-left-color:var(--ok)"><b>★</b><span>${esc(c.name)}<i>${c.audioName?esc(c.audioName):'Built-in backing'} · ${c.bpm} BPM · ${c.notes.length} notes${c.by?' · by '+esc(c.by):''}${c.pub?' · published':''}</i></span>${cbadge(c)}</button><button data-a="ced" data-v="${i}">Edit</button><button data-a="cshr" data-v="${i}" title="Save as a .otm level file you can send to anyone">Share</button><button data-a="cpub" data-v="${i}" title="${c.pub?'Remove this level from Community → All levels.':v?'Publish it as an unranked community level.':'Clear the level from the start to verify it, then you can publish it.'}">${c.pub?'Published ✓':v?'Publish':'Verify'}</button><button data-a="cdel" data-v="${i}">${delArm===i?'Sure?':'✕'}</button></div>`}
 function cdel(i){if(delArm!==i){delArm=i;menu();return}const c=save.custom[i];save.custom.splice(i,1);(save.cdel=save.cdel||[]).push(c.id);if(save.cdel.length>200)save.cdel.shift();delete ABUF[c.id];delete PK[c.id];delete MEM[c.id];idbDel(c.id);delArm=-1;persist();menu()}
 
 // ---- editor model helpers
@@ -784,6 +785,10 @@ async function readLevelFile(file){if(file.size>4e6)throw new Error('That file i
  let d;try{d=JSON.parse(text)}catch(e){throw new Error('That file isn’t a One Tap level.')}
  if(!d||d.fmt!==OTM_MAGIC)throw new Error('That file isn’t a One Tap level.');return cleanLevel(d.level,d.by)}
 const sig=c=>canon({bpm:c.bpm,off:c.off,beats:c.beats,an:c.audioName||'',notes:c.notes.map(o=>[r5(o.b),o.n,o.t,r5(o.len||0)])});
+// A level is verified once its creator has cleared it from the start themselves. The hash ties the
+// verification to the current chart, so editing the notes afterwards means playing it again.
+const vhash=c=>{const s=sig(c);let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return(h>>>0).toString(36)+'.'+s.length};
+const verified=c=>!!(c&&c.vt&&c.vh&&c.vh===vhash(c));
 async function importFiles(fl){let ok=0,last='';
  for(const f of fl){try{const c=await readLevelFile(f),sg=sig(c);if(save.custom.some(q=>sig(q)===sg)){toast('Already in your list',c.name);continue}save.custom.push(c);ok++;last=c.name}
   catch(e){toast('Couldn’t import '+clean(f.name).slice(0,30),e.message||'Unreadable file')}}
@@ -816,7 +821,7 @@ const HEAD='micah',HEADMAIL=HEAD+'@'+UDOM;
 const isUdom=e=>!!e&&e.endsWith('@'+UDOM);
 const isHead=()=>!!SYNC.acct&&SYNC.email===HEADMAIL;
 const isCur=()=>isHead()||SYNC.cur===true;
-const CM={items:[],feat:[],lvls:[],curs:[],busy:false,loaded:false,msg:'',br:null};
+const CM={items:[],feat:[],lvls:[],curs:[],busy:false,loaded:false,msg:'',br:null,tab:0};
 const cmOK=()=>!!(SYNC.fb&&SYNC.fb.cget&&SYNC.uid);
 async function syncProfile(uid){try{if(!cmOK()||SYNC.uid!==uid||!SYNC.uname)return;
  const lv=save.custom.filter(c=>c&&c.id&&canon(c).length<=300000).slice(0,300).map(c=>({k:ckey(c.id),n:String(c.name||'').slice(0,40),b:c.bpm,m:c.notes.length,a:String(c.audioName||'').slice(0,40)})),s=canon(lv);
@@ -832,17 +837,47 @@ async function cmFind(name){name=String(name||'').trim().toLowerCase();
 async function cmLoad(){if(!cmOK())return;CM.busy=true;CM.msg='';cmDraw();
  try{const uid=SYNC.uid;if(!isHead())SYNC.cur=!!(await SYNC.fb.cget(['curators',uid]));
   const ents=await SYNC.fb.clist(['community']);
-  CM.feat=ents.filter(e=>e.d&&e.d.type==='account'&&e.d.uid).map(e=>({id:e.id,uid:e.d.uid,name:e.d.name||'?',by:e.d.by||''}));
-  CM.lvls=ents.filter(e=>e.d&&e.d.type==='level'&&e.d.uid&&e.d.key).map(e=>({id:e.id,uid:e.d.uid,key:e.d.key,name:e.d.name||'Level',owner:e.d.owner||'',bpm:e.d.bpm||0,m:e.d.m||0,a:e.d.a||''}));
+  CM.feat=ents.filter(e=>e.d&&e.d.type==='account'&&e.d.uid).map(e=>({id:e.id,uid:e.d.uid,name:e.d.name||'?',by:e.d.by||'',ts:e.d.ts||0}));
+  CM.lvls=ents.filter(e=>e.d&&e.d.type==='level'&&e.d.uid&&e.d.key).map(e=>({id:e.id,uid:e.d.uid,key:e.d.key,name:e.d.name||'Level',owner:e.d.owner||'',bpm:e.d.bpm||0,m:e.d.m||0,a:e.d.a||'',ts:e.d.ts||0}));
   CM.curs=isHead()?(await SYNC.fb.clist(['curators'])).map(e=>({uid:e.id,name:(e.d&&e.d.name)||e.id})):[];
   const items=[],seen=new Set(),add=o=>{const k=o.uid+'/'+o.key;if(seen.has(k))return;seen.add(k);items.push(o)};
-  for(const l of CM.lvls)add({uid:l.uid,key:l.key,name:l.name,owner:l.owner,bpm:l.bpm,m:l.m,a:l.a,pin:l.id});
+  for(const l of CM.lvls)add({uid:l.uid,key:l.key,name:l.name,owner:l.owner,bpm:l.bpm,m:l.m,a:l.a,pin:l.id,ts:l.ts});
   const fe=CM.feat.slice(0,60),profs=await Promise.all(fe.map(f=>SYNC.fb.cget(['profiles',f.uid]).catch(()=>null)));
-  fe.forEach((f,i)=>{const p=profs[i];if(p&&Array.isArray(p.lv))for(const l of p.lv.slice(0,300))if(l&&l.k)add({uid:f.uid,key:l.k,name:l.n||'Level',owner:f.name,bpm:l.b||0,m:l.m||0,a:l.a||''})});
-  CM.items=items;CM.loaded=true}
+  fe.forEach((f,i)=>{const p=profs[i];if(p&&Array.isArray(p.lv))for(const l of p.lv.slice(0,300))if(l&&l.k)add({uid:f.uid,key:l.k,name:l.n||'Level',owner:f.name,bpm:l.b||0,m:l.m||0,a:l.a||'',ts:+p.ts||f.ts||0})});
+  CM.items=items.sort((a,b)=>(b.ts||0)-(a.ts||0));CM.loaded=true;await pubLoad(true)}
  catch(e){CM.msg=e&&e.code==='permission-denied'?'The community rules aren’t deployed yet. Publish the firestore.rules file in the Firebase console.':'Couldn’t load the community. Check your connection and try again.'}
  CM.busy=false;cmDraw()}
-const cmCard=(it,i)=>`<div class="crow"><button class="card" data-a="cm_play" data-v="${i}" style="border-left-color:var(--ok)"><b>♪</b><span>${esc(it.name)}<i>${it.a?esc(it.a)+' · ':''}${it.bpm?it.bpm+' BPM · ':''}${it.m} notes · by ${esc(it.owner)}</i></span><u style="background:#6a6388">Community</u></button><button data-a="cm_save" data-v="${i}" title="Copy it into your Custom levels without playing">Save</button>${it.pin&&isCur()?`<button data-a="cm_unpin" data-v="${i}" title="Take this level out of the community tab">✕</button>`:''}</div>`;
+const cmCard=(it,i)=>`<div class="crow"><button class="card" data-a="cm_play" data-v="${i}" style="border-left-color:var(--ok)"><b>♪</b><span>${esc(it.name)}<i>${it.a?esc(it.a)+' · ':''}${it.bpm?it.bpm+' BPM · ':''}${it.m} notes · by ${esc(it.owner)}</i></span><u style="background:#6a6388">Featured</u></button><button data-a="cm_save" data-v="${i}" title="Copy it into your Custom levels without playing">Save</button>${it.pin&&isCur()?`<button data-a="cm_unpin" data-v="${i}" title="Take this level out of the community tab">✕</button>`:''}</div>`;
+// Community → All levels: unranked levels their creators published themselves. Firestore keeps only
+// the small metadata document (published/<uid>_<key>); the level data is read from the creator's
+// own c_<id> document, which firestore.rules opens while the published record exists.
+const pubCard=(it,i)=>`<div class="crow"><button class="card" data-a="cm_pubplay" data-v="${i}" style="border-left-color:var(--ring)"><b>♪</b><span>${esc(it.name)}<i>${it.a?esc(it.a)+' · ':''}${it.bpm?it.bpm+' BPM · ':''}${it.m} notes · by ${esc(it.owner)}</i></span><u style="background:#6a6388" title="Scores on published levels don’t count towards rankings">Unranked</u></button><button data-a="cm_pubsave" data-v="${i}" title="Copy it into your Custom levels without playing">Save</button>${it.uid===SYNC.uid||isCur()?`<button data-a="cm_pubunpub" data-v="${i}" title="Remove it from All levels">✕</button>`:''}</div>`;
+const PUB={items:[],busy:false,loaded:false,msg:''};
+async function pubLoad(quiet){if(!cmOK())return;PUB.busy=true;if(!quiet)commPaint();
+ try{let rows;
+  try{rows=await SYNC.fb.ctop(['published'],'ts',200)} // newest uploads first, straight from the database
+  catch(e){if(e&&e.code==='permission-denied')throw e;rows=await SYNC.fb.clist(['published'])}
+  PUB.items=rows.filter(r=>r.d&&r.d.uid&&r.d.key).map(r=>({id:r.id,uid:r.d.uid,key:r.d.key,name:r.d.name||'Level',owner:r.d.owner||'?',bpm:r.d.bpm||0,m:r.d.m||0,a:r.d.a||'',vt:r.d.vt||0,ts:r.d.ts||0})).sort((a,b)=>b.ts-a.ts).slice(0,200);
+  PUB.loaded=true;PUB.msg=''}
+ catch(e){PUB.msg=e&&e.code==='permission-denied'?'The community rules aren’t deployed yet. Publish the firestore.rules file in the Firebase console.':'Couldn’t load published levels. Check your connection and try again.'}
+ PUB.busy=false;if(!quiet)commPaint()}
+const commPaint=()=>{if(state!=='menu')return;if($('#cmroot'))cmDraw();else onlDraw()};
+async function cmPublish(i){const c=save.custom[i];if(!c)return;
+ if(!socOK()){toast('Log in to publish','Publishing needs an account and a username.');return acctScreen()}
+ if(canon(c).length>300000)return toast('Too big to publish','This level is larger than the cloud save limit. Try fewer notes.');
+ if(!verified(c)){toast('Verify it first','Clear the level from the start once, then you can publish it.');return playCustom(i,false,0,false)}
+ try{await SYNC.fb.cset(['published',SYNC.uid+'_'+ckey(c.id)],{uid:SYNC.uid,key:ckey(c.id),name:String(c.name||'Level').slice(0,40),owner:SYNC.uname,bpm:c.bpm,m:c.notes.length,a:String(c.audioName||'').slice(0,40),vt:c.vt,ts:Date.now()});
+  c.pub=Date.now();persist();schedulePush(0);toast('Published','Unranked · it is now in Community → All levels.');await pubLoad(true);commPaint()}
+ catch(e){toast('Couldn’t publish',socErr(e,'community'))}}
+async function cmUnpublish(i){const c=save.custom[i];if(!c)return;
+ if(!socOK())return toast('Log in to unpublish','Published levels are tied to your account.');
+ try{await SYNC.fb.cdel(['published',SYNC.uid+'_'+ckey(c.id)])}catch(e){return toast('Couldn’t unpublish',socErr(e,'community'))}
+ delete c.pub;persist();toast('Unpublished',c.name);await pubLoad(true);commPaint()}
+function cmPubAct(i){const c=save.custom[i];if(!c)return;return c.pub?cmUnpublish(i):cmPublish(i)}
+async function pubRemove(it){if(!it)return;
+ try{await SYNC.fb.cdel(['published',it.id])}catch(e){PUB.msg=socErr(e,'community');commPaint();return}
+ if(it.uid===SYNC.uid){const c=save.custom.find(q=>q.id&&ckey(q.id)===it.key);if(c){delete c.pub;persist()}}
+ toast('Removed from All levels',it.name);await pubLoad(true);commPaint()}
 function cmDraw(){if(state!=='menu')return;if(!$('#cmroot')){onlDraw();return}const u=$('#cmu'),uv=u?u.value:'',st=ui.scrollTop;
  let h='<div class="p" id="cmroot" style="max-width:700px"><h1 style="font-size:28px">Community</h1>';
  if(!SYNC.fb||SYNC.dbState==='none')h+='<p>Community levels need accounts, which aren’t available right now.</p>';
@@ -868,8 +903,11 @@ async function cmGet(it,play){if(!it||!cmOK())return;
  catch(e){toast('Couldn’t load that level',e&&e.code==='permission-denied'?'It isn’t featured any more.':(e.message||'Try again.'))}}
 async function commAct(a,b){const v=+b.dataset.v;
  if(a=='cm_open')return commScreen();
+ if(a=='cm_tab'){CM.tab=v;if(v==1&&!PUB.loaded&&cmOK())pubLoad();else commPaint();return}
  if(a=='cm_refresh')return cmLoad();
  if(a=='cm_play'||a=='cm_save')return cmGet(CM.items[v],a=='cm_play');
+ if(a=='cm_pubplay'||a=='cm_pubsave')return cmGet(PUB.items[v],a=='cm_pubplay');
+ if(a=='cm_pubunpub')return pubRemove(PUB.items[v]);
  const nm=()=>($('#cmu')&&$('#cmu').value)||'',F=SYNC.fb;CM.msg='';
  try{
   if(a=='cm_addacct'){const p=await cmFind(nm());await F.cset(['community','acct_'+p.uid],{type:'account',uid:p.uid,name:p.name,by:SYNC.acct.name,ts:Date.now()});toast('Account featured',p.name)}
@@ -886,12 +924,18 @@ async function commAct(a,b){const v=+b.dataset.v;
 /* ================= ONLINE TAB, CHANGE PASSWORD, FRIENDS, LEADERBOARDS ================= */
 // Online tab: the community levels now live in the main menu's right-hand list when "Online" is switched on.
 const onlKey=()=>SYNC.dbState+'|'+(SYNC.acct?1:0)+'|'+(SYNC.uid||'');
-function onlHTML(){let h='<h2 style="margin-top:0">Online · community levels</h2>';
- if(!SYNC.fb||SYNC.dbState==='none')return h+'<p>Online levels need accounts, which aren’t available right now.</p>';
+function onlHTML(){let h='<h2 style="margin-top:0">Community</h2>';
+ if(!SYNC.fb||SYNC.dbState==='none')return h+'<p>Community levels need accounts, which aren’t available right now.</p>';
  if(SYNC.dbState==='wait')return h+'<p>Connecting…</p>';
- if(!SYNC.acct)return h+'<p>Log in to play levels picked by the community team.</p><div class="row"><button class="main" data-a="acct">Log in</button></div>';
- h+='<p class="hint" style="margin:0 4px 8px">Levels picked by the community team. Tap one to play it. It’s copied into your Custom levels, and songs aren’t included, so you may be asked for the audio file.</p>';
- if(CM.busy&&!CM.loaded)h+='<p>Loading…</p>';else if(CM.items.length)h+=CM.items.map(cmCard).join('');else if(!CM.msg)h+='<p>Nothing is featured yet.</p>';
+ if(!SYNC.acct)return h+'<p>Log in to browse community levels.</p><div class="row"><button class="main" data-a="acct">Log in</button></div>';
+ h+='<div class="row" style="margin:0 0 8px">'+seg('cm_tab',['Featured','All levels'],CM.tab)+'</div>';
+ if(CM.tab===1){
+  h+='<p class="hint" style="margin:0 4px 8px">Unranked levels published by their creators, newest first. Tap one to play it. It’s copied into your Custom levels, and songs aren’t included, so you may be asked for the audio file.</p>';
+  if(PUB.busy&&!PUB.loaded)h+='<p>Loading…</p>';else if(PUB.items.length)h+=PUB.items.map(pubCard).join('');else if(!PUB.msg)h+='<p>Nothing is published yet. Clear one of your custom levels from the start, then press Publish on it.</p>';
+  if(PUB.msg)h+='<p class="nb">'+esc(PUB.msg)+'</p>';
+  return h+'<div class="row" style="margin:8px 0"><button data-a="cm_refresh">Refresh</button>'+(isCur()?'<button data-a="cm_open">Curator tools</button>':'')+'</div>'}
+ h+='<p class="hint" style="margin:0 4px 8px">Featured picks from the community team, newest first. Tap one to play it. It’s copied into your Custom levels, and songs aren’t included, so you may be asked for the audio file.</p>';
+ if(CM.busy&&!CM.loaded)h+='<p>Loading…</p>';else if(CM.items.length)h+=CM.items.map(cmCard).join('');else if(!CM.msg)h+='<p>Nothing is featured yet. Player-published levels are under All levels.</p>';
  if(CM.msg)h+='<p class="nb">'+esc(CM.msg)+'</p>';
  return h+'<div class="row" style="margin:8px 0"><button data-a="cm_refresh">Refresh</button>'+(isCur()?'<button data-a="cm_open">Curator tools</button>':'')+'</div>'}
 function onlDraw(){const e=$('#onl');if(!save.on||!e)return;const st=e.scrollTop;e.innerHTML=onlHTML();e.scrollTop=st}
