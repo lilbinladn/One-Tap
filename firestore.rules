@@ -1,0 +1,15 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Each player can only touch their own save documents: users/<their uid>/data/*
+    match /users/{uid}/data/{docId} {
+      allow read, delete: if request.auth != null && request.auth.uid == uid;
+      allow create, update: if request.auth != null && request.auth.uid == uid
+        && request.resource.data.keys().hasOnly(['ts', 'j'])
+        && request.resource.data.ts is number
+        && request.resource.data.j is string
+        && request.resource.data.j.size() < 400000;
+    }
+    // Everything else is closed.
+  }
+}
